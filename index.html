@@ -2,422 +2,350 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Azienda ULSS 3 | Referto di Visita Specialistica Ambulatoriale</title>
+    <title>Referto Clinico - Centro DCA Rovigo</title>
     <style>
-        /* Stili Generali da Sistema Gestionale Ospedaliero */
+        /* RESET & STILE GENERALE IN BIANCO E NERO */
+        * {
+            box-sizing: border-box;
+            font-family: "Times New Roman", Times, serif;
+            color: #000000;
+        }
+        
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #000;
-            line-height: 1.4;
             margin: 0;
             padding: 20px;
-            background-color: #fff;
-            font-size: 12px;
+            background-color: #ffffff;
+            font-size: 11pt;
+            line-height: 1.4;
         }
 
-        /* Intestazione Ospedaliera Ufficiale */
-        .hospital-header {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-        }
-        .hospital-header td {
-            padding: 4px;
-            vertical-align: middle;
-        }
-        .logo-placeholder {
-            width: 80px;
-            border: 1px solid #ccc;
-            text-align: center;
-            font-size: 9px;
-            font-weight: bold;
-            padding: 10px 0;
-            text-transform: uppercase;
-        }
-        .hospital-title {
-            padding-left: 15px !important;
-        }
-        .hospital-title h1 {
-            margin: 0;
-            font-size: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .hospital-title h2 {
-            margin: 2px 0 0 0;
-            font-size: 12px;
-            font-weight: normal;
-        }
-        .hospital-title p {
-            margin: 2px 0 0 0;
-            font-size: 11px;
-            color: #444;
-        }
-        .barcode-section {
-            text-align: right;
-            font-family: monospace;
-            font-size: 10px;
-        }
-        .barcode-mock {
-            border-left: 1px solid #000;
-            border-right: 1px solid #000;
-            letter-spacing: 3px;
-            font-weight: bold;
-            padding: 0 5px;
-            font-size: 14px;
+        /* STRUTTURA PAGINA / CONTENITORE PRINCIPALE */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #000000;
+            padding: 20px;
+            position: relative;
         }
 
-        /* Divisori di Sezione Principali */
-        .document-title-bar {
-            background-color: #f0f0f0;
-            border-top: 2px solid #000;
-            border-bottom: 2px solid #000;
-            text-align: center;
-            padding: 5px 0;
-            margin-bottom: 15px;
-            font-weight: bold;
-            font-size: 13px;
-            text-transform: uppercase;
-        }
-
-        /* Blocco Anagrafica Paziente e Metadati */
-        .patient-info-box {
-            width: 100%;
-            border-collapse: collapse;
+        /* INTESTAZIONE (CAPO PAGINA) */
+        .header {
+            border-bottom: 2px solid #000000;
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .patient-info-box td {
-            border: 1px solid #000;
-            padding: 6px 8px;
-            vertical-align: top;
-            font-size: 11px;
-        }
-        .patient-info-box td.label {
-            background-color: #fafafa;
-            font-weight: bold;
-            width: 15%;
-            text-transform: uppercase;
-            font-size: 10px;
-            color: #333;
-        }
-        .patient-info-box td.value strong {
-            font-size: 13px;
-        }
 
-        /* Intestazioni delle Sezioni Cliniche */
-        .section-header {
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            background-color: #e5e5e5;
-            padding: 4px 8px;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            border-left: 4px solid #000;
-        }
-
-        /* Contenuti Clinici */
-        .clinical-text {
-            text-align: justify;
-            margin: 5px 0 12px 0;
-            padding-left: 5px;
-            font-size: 12px;
-        }
-        .clinical-list {
-            margin: 5px 0 12px 0;
-            padding-left: 20px;
-        }
-        .clinical-list li {
-            margin-bottom: 6px;
-            font-size: 12px;
-        }
-
-        /* Tabella Esami di Laboratorio / Parametri */
-        .lab-table {
+        .header-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 10px 0 15px 0;
         }
-        .lab-table th {
-            border-bottom: 2px solid #000;
-            border-top: 1px solid #ccc;
-            padding: 5px 8px;
-            text-align: left;
-            font-size: 10px;
-            text-transform: uppercase;
+
+        .header-logo-text {
+            font-size: 14pt;
             font-weight: bold;
-            background-color: #fafafa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .lab-table td {
-            border-bottom: 1px solid #ddd;
-            padding: 6px 8px;
-            font-size: 11px;
+
+        .header-subtext {
+            font-size: 10pt;
+            font-style: italic;
+        }
+
+        .doc-title {
+            text-align: center;
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 15px 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SEZIONI E GRIGLIE */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000000;
+            margin-bottom: 8px;
+            padding-bottom: 2px;
+        }
+
+        /* TABELLE DI COMPILAZIONE (Anagrafe, Parametri, ecc.) */
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .form-table td, .form-table th {
+            border: 1px solid #000000;
+            padding: 6px;
             vertical-align: middle;
         }
-        .lab-table tr.anomaly {
+
+        .form-table th {
+            background-color: #ffffff;
             font-weight: bold;
-            background-color: #fff8f8;
-        }
-        .lab-table tr.anomaly td.flag {
-            color: #d93025;
+            text-align: left;
+            font-size: 10pt;
         }
 
-        /* Box Terapia / Prescrizioni Farmaceutiche */
-        .prescription-container {
-            border: 1px dashed #000;
-            padding: 12px;
-            margin-top: 10px;
-            background-color: #fff;
-        }
-        .prescription-item {
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px dotted #ccc;
-        }
-        .prescription-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        /* Area Firme Ospedaliere */
-        .signature-area {
+        /* CAMPI DI INPUT EDITABILI */
+        input[type="text"], input[type="date"], input[type="number"], textarea {
             width: 100%;
+            border: none;
+            background: transparent;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 11pt;
+            padding: 2px 0;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            background-color: #f2f2f2; /* Leggero feedback visivo a schermo */
+        }
+
+        textarea {
+            resize: vertical;
+            line-height: 1.5;
+        }
+
+        /* CLASSI UTILITARIE */
+        .label {
+            font-size: 10pt;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .dotted-line {
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* AREA NOTE / DIARIO CLINICO */
+        .notes-area {
+            border: 1px solid #000000;
+            min-height: 120px;
+            padding: 8px;
+        }
+
+        /* PIÈ DI PAGINA (SIGNATURES & FOOTER) */
+        .footer-signatures {
             margin-top: 40px;
+            width: 100%;
             border-collapse: collapse;
-            page-break-inside: avoid;
         }
-        .signature-area td {
+
+        .footer-signatures td {
             width: 50%;
-            font-size: 11px;
-            vertical-align: top;
-        }
-        .signature-box {
-            border: 1px solid #ccc;
-            padding: 15px;
+            border: none;
             text-align: center;
-            background-color: #fafafa;
-            min-height: 60px;
+            font-size: 10pt;
         }
 
-        /* Piè di pagina standard di sistema */
-        .system-footer {
-            margin-top: 50px;
-            border-top: 1px solid #000;
-            padding-top: 6px;
-            font-size: 9px;
-            color: #555;
-            text-align: center;
-            page-break-inside: avoid;
+        .signature-space {
+            margin-top: 45px;
+            border-top: 1px dashed #000000;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Regole di ottimizzazione Layout di Stampa */
+        .footer-info {
+            margin-top: 30px;
+            border-top: 1px solid #000000;
+            padding-top: 5px;
+            font-size: 8pt;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        /* OTTIMIZZAZIONE RIGIDA PER LA STAMPA (PRINT) */
         @media print {
             body {
+                padding: 0;
+                background-color: #ffffff;
+            }
+            .page-container {
+                border: none;
+                max-width: 100%;
+                padding: 0;
+            }
+            input:focus, textarea:focus {
+                background-color: transparent;
+            }
+            /* Rende invisibili i controlli nativi dei browser per date e numeri in stampa */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
                 margin: 0;
-                padding: 10px;
-                font-size: 11px;
             }
-            .document-title-bar {
-                background-color: #f0f0f0 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+            input[type=number] {
+                -moz-appearance: textfield;
             }
-            .section-header {
-                background-color: #e5e5e5 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                page-break-after: avoid;
-            }
-            .lab-table th {
-                background-color: #fafafa !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .lab-table tr.anomaly {
-                background-color: #fff8f8 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .signature-box {
-                background-color: #fafafa !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .patient-info-box td.label {
-                background-color: #fafafa !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            /* Impedisce spaccature orrende del foglio a metà tabella o firma */
-            tr { page-break-inside: avoid; }
-            p, ul { page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
 
-    <table class="hospital-header">
-        <tr>
-            <td class="logo-placeholder">
-                REGIONE<br>VENETO
-            </td>
-            <td class="hospital-title">
-                <h1>Azienda ULSS 3 Serenissima</h1>
-                <h2>Presidio Ospedaliero di Dolo - Ospedale Civile</h2>
-                <p>Centro per i Disturbi del Comportamento Alimentare (DCA)<br>Ambulatorio Specialistico di Secondo Livello</p>
-            </td>
-            <td class="barcode-section">
-                <span class="barcode-mock">𝄃𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃</span><br>
-                <span>Mod. DCA-89.22_4</span>
-            </td>
-        </tr>
-    </table>
+<div class="page-container">
 
-    <div class="document-title-bar">
-        Referto Ambulatoriale Specialistico - Inquadramento Diagnostico
+    <div class="header">
+        <table class="header-table">
+            <tr>
+                <td style="width: 70%;">
+                    <div class="header-logo-text">Azienda ULSS 5 Polesana</div>
+                    <div class="header-subtext">Regione del Veneto - Ospedale di Rovigo</div>
+                    <div class="header-subtext" style="font-weight: bold; margin-top: 2px;">Dipartimento di Salute Mentale</div>
+                    <div class="header-subtext">Centro per i Disturbi del Comportamento Alimentare (DCA)</div>
+                </td>
+                <td style="width: 30%; text-align: right; vertical-align: top; font-size: 9pt;">
+                    <strong>Cod. Struttura:</strong> dca-rov-05<br>
+                    <strong>Data Stampa:</strong> <input type="text" value="13/07/2026" style="width: 70px; text-align: right; font-size: 9pt;">
+                </td>
+            </tr>
+        </table>
+        
+        <div class="doc-title">Referto di Valutazione / Monitoraggio Clinico DCA</div>
     </div>
 
-    <table class="patient-info-box">
-        <tr>
-            <td class="label">Paziente</td>
-            <td class="value" colspan="3"><strong>Luca Finaldi</strong></td>
-            <td class="label">Codice Fiscale</td>
-            <td class="value">FNLLCU05D07D325E</td>
-        </tr>
-        <tr>
-            <td class="label">Data Nascita</td>
-            <td class="value">07/04/2005</td>
-            <td class="label">Luogo Nascita</td>
-            <td class="value">Dolo (VE)</td>
-            <td class="label">Sesso</td>
-            <td class="value">M</td>
-        </tr>
-        <tr>
-            <td class="label">Data Referto</td>
-            <td class="value">12 Giugno 2026</td>
-            <td class="label">Tipo Accesso</td>
-            <td class="value" colspan="3">Visita Ambulatoriale di Accertamento</td>
-        </tr>
-    </table>
-
-    <div class="section-header">I. Inquadramento Clinico e Diagnostico</div>
-    <div class="clinical-text">
-        <strong>Diagnosi Principale:</strong> BULIMIA NERVOSA (Codifiche di riferimento scientifico - Criteri DSM-5: 307.51 / ICD-10: F50.2)<br><br>
-        <strong>Sintesi Anamnestica:</strong> Il paziente si è presentato in data odierna per completare l'iter di accertamento diagnostico specialistico. Dall'anamnesi e dai diari alimentari emergono ricorrenti episodi di abbuffate compulsive (frequenza di circa 4-5 volte a settimana negli ultimi tre mesi), caratterizzati dalla perdita di controllo sull'assunzione di cibo. Tali episodi sono costantemente seguiti da condotte di compenso inappropriate volte a prevenire l'aumento di peso, identificate principalmente in vomito autoindotto e abuso sporadico di diuretici. Si rileva una severa e persistente preoccupazione per la forma fisica e il peso corporeo, che influenza in modo disfunzionale i livelli di autostima.
+    <div class="section">
+        <div class="section-title">1. Dati Anagrafici del Paziente</div>
+        <table class="form-table">
+            <tr>
+                <td style="width: 50%;"><span class="label">Cognome:</span> <input type="text" placeholder="......................................................"></td>
+                <td style="width: 50%;"><span class="label">Nome:</span> <input type="text" placeholder="......................................................"></td>
+            </tr>
+            <tr>
+                <td><span class="label">Data di Nascita:</span> <input type="date"></td>
+                <td><span class="label">Codice Fiscale:</span> <input type="text" style="text-transform: uppercase;" placeholder="......................................................"></td>
+            </tr>
+            <tr>
+                <td><span class="label">Comune di Residenza:</span> <input type="text" placeholder="Rovigo o prov."></td>
+                <td><span class="label">Recapito Telefonico:</span> <input type="text" placeholder="......................................................"></td>
+            </tr>
+        </table>
     </div>
 
-    <div class="section-header">II. Esame Obiettivo e Reperti Clinici</div>
-    <ul class="clinical-list">
-        <li><strong>Apparato Gastroenterico e Cavo Orale:</strong> Evidente ipertrofia bilaterale delle ghiandole parotidi (scialoadenosi), compatibile con stimolazione meccanica e chimica da vomito ripetuto. Iniziale erosione dello smalto dentale a carico delle superfici linguali degli incisivi superiori. Non si rilevano lesioni da sfregamento al dorso della mano (Segno di Russell assente).</li>
-        <li><strong>Apparato Cardiocircolatorio:</strong> Toni cardiaci validi, ritmici. Non si apprezzano soffi patologici. Emodinamica stabile, pur in presenza di una tendenza all'ipotensione arteriosa ortostatica.</li>
-        <li><strong>Apparato Neuropsichiatrico:</strong> Ideazione rigidamente focalizzata sul controllo del peso corporeo. Deflessione del tono dell'umore secondaria al senso di colpa post-crisi. Ansia anticipatoria marcata in prossimità dei pasti principali.</li>
-    </ul>
-
-    <div class="section-header">III. Valutazione Parametrica e di Laboratorio</div>
-    <table class="lab-table">
-        <thead>
-            <tr>
-                <th style="width: 35%;">Parametro Rilevato</th>
-                <th style="width: 20%; text-align: right;">Valore Misurato</th>
-                <th style="width: 10%; text-align: center;">Esito</th>
-                <th style="width: 35%;">Intervallo di Riferimento / Stato Clinico</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Peso Corporeo</td>
-                <td style="text-align: right;">68.5 kg</td>
-                <td style="text-align: center;">-</td>
-                <td>Stabile rispetto alla rilevazione del mese precedente</td>
-            </tr>
-            <tr>
-                <td>Altezza</td>
-                <td style="text-align: right;">1.78 m</td>
-                <td style="text-align: center;">-</td>
-                <td>Rilevazione in ortostatismo</td>
-            </tr>
-            <tr>
-                <td>Indice di Massa Corporea (BMI)</td>
-                <td style="text-align: right;">21.6 kg/m²</td>
-                <td style="text-align: center;">-</td>
-                <td>Fascia di Normopeso (condizione tipica della bulimia nervosa)</td>
-            </tr>
-            <tr>
-                <td>Pressione Arteriosa (PA)</td>
-                <td style="text-align: right;">110/68 mmHg</td>
-                <td style="text-align: center;">-</td>
-                <td>Tendenza alla stasi ipotensiva</td>
-            </tr>
-            <tr>
-                <td>Frequenza Cardiaca (FC)</td>
-                <td style="text-align: right;">68 bpm</td>
-                <td style="text-align: center;">-</td>
-                <td>Ritmo sinusale normofrequente</td>
-            </tr>
-            <tr class="anomaly">
-                <td>Potassiemia (K+)</td>
-                <td style="text-align: right;">3.2 mEq/L</td>
-                <td style="text-align: center;" class="flag">* BASSO</td>
-                <td>3.5 - 5.1 mEq/L (Ipocaliemia lieve da evacuazione)</td>
-            </tr>
-            <tr>
-                <td>Sodiemia (Na+)</td>
-                <td style="text-align: right;">137 mEq/L</td>
-                <td style="text-align: center;">-</td>
-                <td>136 - 145 mEq/L (Nei limiti della norma)</td>
-            </tr>
-            <tr>
-                <td>Cloremia (Cl-)</td>
-                <td style="text-align: right;">96 mEq/L</td>
-                <td style="text-align: center;">-</td>
-                <td>98 - 107 mEq/L (Ipocloridemia relativa ai limiti inferiori)</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="section-header">IV. Accertamenti Strumentali</div>
-    <div class="clinical-text">
-        <strong>Elettrocardiogramma (ECG) del 12/06/2026:</strong> Ritmo sinusale alla frequenza di 68 bpm. Tracciato nei limiti della norma. Intervallo QTc calcolato in 435 ms, normale ma meritevole di stretto monitoraggio evolutivo in relazione alle fluttuazioni degli elettroliti sierici (rischio di allungamento del tratto QT indotto da ipocaliemia).
+    <div class="section">
+        <div class="section-title">2. Rilevazioni Parametri Clinici e Antropometrici</div>
+        <table class="form-table" style="text-align: center;">
+            <thead>
+                <tr>
+                    <th style="width: 20%; text-align: center;">Peso (Kg)</th>
+                    <th style="width: 20%; text-align: center;">Altezza (m)</th>
+                    <th style="width: 20%; text-align: center;">B.M.I. calcolato</th>
+                    <th style="width: 20%; text-align: center;">Pressione Art. (mmHg)</th>
+                    <th style="width: 20%; text-align: center;">Frequenza Card. (bpm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" step="0.1" style="text-align: center;"></td>
+                    <td><input type="number" step="0.01" style="text-align: center;"></td>
+                    <td><input type="number" step="0.1" style="text-align: center;"></td>
+                    <td><input type="text" style="text-align: center;" placeholder="es. 120/80"></td>
+                    <td><input type="number" style="text-align: center;"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table class="form-table" style="margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Indicatore Comportamentale (Ultime 24h/Settimana)</th>
+                    <th style="width: 20%; text-align: center;">Frequenza/Presenza</th>
+                    <th style="width: 40%;">Note Specifiche</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Restrizione Alimentare Quantitativa</td>
+                    <td><input type="text" style="text-align: center;" placeholder="Sì / No / Parziale"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Episodi di Abbuffata Compulsiva</td>
+                    <td><input type="text" style="text-align: center;" placeholder="N° episodi"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Condotte di Eliminazione (Vomito/Lassativi)</td>
+                    <td><input type="text" style="text-align: center;" placeholder="Sì / No"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Iperattività Fisica Compensatoria</td>
+                    <td><input type="text" style="text-align: center;" placeholder="Grado Lieve/Mod/Severo"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="section-header">V. Schema Terapeutico e Prescrizione Medica</div>
-    <div class="prescription-container">
-        <div class="prescription-item">
-            <strong>[TERAPIA FARMACOLOGICA ANTI-BULIMICA]</strong><br>
-            • <strong>Fluoxetina 20 mg compresse</strong> - Dosaggio: 3 compresse al mattino in un'unica somministrazione (60 mg/die complessivi). Indicazione specifica del protocollo clinico per la riduzione della frequenza delle crisi bulimiche e delle condotte eliminatorie.
-        </div>
-        <div class="prescription-item">
-            <strong>[CORREZIONE SANGUIGNA / ELETTROLITICA]</strong><br>
-            • <strong>Lento-Kalium 600 mg capsule</strong> - Dosaggio: 1 capsula per via orale 2 volte al giorno (ore 08:00 e ore 20:00). Finalizzato al ripristino dei corretti livelli di potassio. Si prescrive controllo ematochimico dei parametri elettrolitici entro 7 giorni.
-        </div>
-        <div class="prescription-item">
-            <strong>[RIABILITAZIONE E SUPPORTO PSICOTERAPEUTICO]</strong><br>
-            • Invio immediato al percorso aziendale interno di <strong>Psicoterapia Cognitivo-Comportamentale Focalizzata sui Disturbi dell'Alimentazione (CBT-E)</strong> con frequenza monosettimanale.<br>
-            • Inserimento programmato nel piano di monitoraggio nutrizionale ambulatoriale interno per la riabilitazione dello schema alimentare.
+    <div class="section">
+        <div class="section-title">3. Schema Terapia Farmacologica in Atto</div>
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Principio Attivo / Farmaco</th>
+                    <th style="width: 20%; text-align: center;">Dosaggio</th>
+                    <th style="width: 40%;">Posologia e Orari di Assunzione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text" style="text-align: center;"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text" style="text-align: center;"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text" style="text-align: center;"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">4. Note Cliniche, Sintesi del Colloquio e Valutazione Psico-Nutrizionale</div>
+        <div class="notes-area">
+            <textarea rows="6" placeholder="Inserire le considerazioni cliniche del team multidisciplinare (Psichiatra, Psicologo, Dietista)..."></textarea>
         </div>
     </div>
 
-    <table class="signature-area">
+    <table class="footer-signatures">
         <tr>
             <td>
-                <strong>Luogo e Data di Emissione:</strong><br>
-                Dolo, 12 Giugno 2026
+                Firma del Paziente / Familiare (se minore)
+                <div class="signature-space"></div>
             </td>
             <td>
-                <div class="signature-box">
-                    <strong>Il Medico Specialista Redattore</strong><br>
-                    Centro DCA - Azienda ULSS 3 Serenissima<br>
-                    <span style="font-size: 9px; color: #666; display:block; margin-top:5px;">[Documento Firmato Digitalmente ai sensi del D.Lgs. 82/2005]</span>
-                </div>
+                Il Medico / Operatore Centro DCA Rovigo
+                <div class="signature-space"></div>
             </td>
         </tr>
     </table>
 
-    <div class="system-footer">
-        Azienda ULSS 3 Serenissima - Presidio Ospedaliero di Dolo | Via XX Settembre 3, 30031 Dolo (VE) | Centralino: 041/5135111<br>
-        U.O. Disturbi del Comportamento Alimentare - Edificio Code, Piano 1. Documento stampato da sistema informativo sanitario regionale. Copia conforme all'originale clinico.
+    <div class="footer-info">
+        Azienda ULSS 5 Polesana - Sede Legale: Viale Tre Martiri, 89 - 45100 Rovigo (RO)<br>
+        Centro per i Disturbi del Comportamento Alimentare - Ambulatorio Specialistico Territoriale<br>
+        Contatti e info: Tel. Ospedale Rovigo Segreteria DSM | Documentazione Clinica Strettamente Riservata - Segreto Professionale (D.Lgs. 196/2003)
     </div>
+
+</div>
 
 </body>
 </html>
