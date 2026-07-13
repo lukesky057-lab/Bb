@@ -2,185 +2,232 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Referto Clinico - Centro DCA Rovigo</title>
+    <title>Referto Clinico Multidisciplinare DCA - ULSS 5 Polesana</title>
     <style>
-        /* RESET & STILE GENERALE IN BIANCO E NERO */
+        /* RESET & PRINT MANAGEMENT */
         * {
             box-sizing: border-box;
-            font-family: "Times New Roman", Times, serif;
+            font-family: Arial, Helvetica, sans-serif;
             color: #000000;
         }
         
         body {
             margin: 0;
-            padding: 20px;
+            padding: 10mm;
             background-color: #ffffff;
-            font-size: 11pt;
-            line-height: 1.4;
+            font-size: 10pt;
+            line-height: 1.3;
         }
 
-        /* STRUTTURA PAGINA / CONTENITORE PRINCIPALE */
+        /* CONTENITORE FORMATO A4 */
         .page-container {
-            max-width: 800px;
+            width: 100%;
+            max-width: 190mm;
             margin: 0 auto;
-            border: 1px solid #000000;
-            padding: 20px;
             position: relative;
         }
 
-        /* INTESTAZIONE (CAPO PAGINA) */
-        .header {
-            border-bottom: 2px solid #000000;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .header-table {
+        /* INTESTAZIONE UFFICIALE REGIONE VENETO / ULSS 5 */
+        .header-container {
+            display: table;
             width: 100%;
-            border-collapse: collapse;
+            border-bottom: 3px double #000000;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
         }
 
-        .header-logo-text {
-            font-size: 14pt;
+        .header-left {
+            display: table-cell;
+            width: 65%;
+            vertical-align: top;
+        }
+
+        .header-right {
+            display: table-cell;
+            width: 35%;
+            vertical-align: top;
+            text-align: right;
+        }
+
+        .institution-title {
+            font-size: 13pt;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin: 0;
         }
 
-        .header-subtext {
-            font-size: 10pt;
+        .sub-institution {
+            font-size: 9.5pt;
+            font-weight: 600;
+            margin: 2px 0;
+        }
+
+        .department-text {
+            font-size: 9pt;
             font-style: italic;
+            margin: 1px 0;
+        }
+
+        /* SPAZIO ETICHETTA PAZIENTE (Ospedaliero Reale) */
+        .barcode-sticker-box {
+            border: 1px dashed #444444;
+            padding: 15px 5px;
+            text-align: center;
+            font-size: 7.5pt;
+            color: #555555;
+            background-color: #fafafa;
+            text-transform: uppercase;
+            min-height: 55px;
+        }
+
+        .doc-title-box {
+            text-align: center;
+            margin: 15px 0;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border: 1px solid #000000;
         }
 
         .doc-title {
-            text-align: center;
-            font-size: 16pt;
+            font-size: 13pt;
             font-weight: bold;
-            margin: 15px 0 5px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin: 0;
         }
 
-        /* SEZIONI E GRIGLIE */
+        /* STRUTTURA SEZIONI */
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .section-title {
-            font-size: 11pt;
+            font-size: 9.5pt;
             font-weight: bold;
             text-transform: uppercase;
-            border-bottom: 1px solid #000000;
-            margin-bottom: 8px;
-            padding-bottom: 2px;
+            background-color: #e1e1e1;
+            border: 1px solid #000000;
+            padding: 3px 6px;
+            margin-bottom: 5px;
         }
 
-        /* TABELLE DI COMPILAZIONE (Anagrafe, Parametri, ecc.) */
+        /* TABELLE STRUTTURATE */
         .form-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .form-table td, .form-table th {
             border: 1px solid #000000;
-            padding: 6px;
+            padding: 4px 6px;
             vertical-align: middle;
+            font-size: 9pt;
         }
 
         .form-table th {
-            background-color: #ffffff;
+            background-color: #f9f9f9;
             font-weight: bold;
             text-align: left;
-            font-size: 10pt;
+            text-transform: uppercase;
+            font-size: 8.5pt;
         }
 
-        /* CAMPI DI INPUT EDITABILI */
-        input[type="text"], input[type="date"], input[type="number"], textarea {
+        /* INPUT INTERATTIVI COMPILABILI */
+        input[type="text"], input[type="date"], input[type="number"], select, textarea {
             width: 100%;
             border: none;
             background: transparent;
-            font-family: "Times New Roman", Times, serif;
-            font-size: 11pt;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9.5pt;
             padding: 2px 0;
+            margin: 0;
         }
 
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             outline: none;
-            background-color: #f2f2f2; /* Leggero feedback visivo a schermo */
+            background-color: #f5f8ff;
         }
 
         textarea {
             resize: vertical;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
-        /* CLASSI UTILITARIE */
-        .label {
-            font-size: 10pt;
-            font-weight: bold;
-            white-space: nowrap;
+        .center-input {
+            text-align: center;
         }
 
-        .dotted-line {
-            border-bottom: 1px dotted #000000;
+        /* CHECKBOXES */
+        .checkbox-label {
             display: inline-block;
-            width: 100%;
+            margin-right: 15px;
+            font-size: 9pt;
+            cursor: pointer;
         }
 
-        /* AREA NOTE / DIARIO CLINICO */
-        .notes-area {
+        .checkbox-label input {
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        /* SEZIONI SPECIFICHE DI COMPILAZIONE */
+        .notes-container {
             border: 1px solid #000000;
-            min-height: 120px;
-            padding: 8px;
+            padding: 6px;
+            min-height: 160px;
+            background-color: #ffffff;
         }
 
-        /* PIÈ DI PAGINA (SIGNATURES & FOOTER) */
-        .footer-signatures {
-            margin-top: 40px;
+        /* FIRME E FOOTER */
+        .signature-table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 30px;
+            page-break-inside: avoid;
         }
 
-        .footer-signatures td {
-            width: 50%;
+        .signature-table td {
+            width: 33%;
             border: none;
             text-align: center;
-            font-size: 10pt;
+            font-size: 8.5pt;
+            vertical-align: top;
         }
 
-        .signature-space {
-            margin-top: 45px;
+        .sig-line {
+            margin-top: 35px;
             border-top: 1px dashed #000000;
-            width: 70%;
+            width: 80%;
             margin-left: auto;
             margin-right: auto;
         }
 
         .footer-info {
-            margin-top: 30px;
+            margin-top: 25px;
             border-top: 1px solid #000000;
             padding-top: 5px;
-            font-size: 8pt;
+            font-size: 7.5pt;
             text-align: center;
             line-height: 1.3;
+            color: #333333;
+            page-break-inside: avoid;
         }
 
-        /* OTTIMIZZAZIONE RIGIDA PER LA STAMPA (PRINT) */
+        /* REGOLE DI STAMPA RIGIDE */
         @media print {
             body {
                 padding: 0;
                 background-color: #ffffff;
             }
             .page-container {
-                border: none;
                 max-width: 100%;
                 padding: 0;
             }
             input:focus, textarea:focus {
                 background-color: transparent;
             }
-            /* Rende invisibili i controlli nativi dei browser per date e numeri in stampa */
             input::-webkit-outer-spin-button,
             input::-webkit-inner-spin-button {
                 -webkit-appearance: none;
@@ -189,6 +236,9 @@
             input[type=number] {
                 -moz-appearance: textfield;
             }
+            .no-print {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -196,156 +246,110 @@
 
 <div class="page-container">
 
-    <div class="header">
-        <table class="header-table">
-            <tr>
-                <td style="width: 70%;">
-                    <div class="header-logo-text">Azienda ULSS 5 Polesana</div>
-                    <div class="header-subtext">Regione del Veneto - Ospedale di Rovigo</div>
-                    <div class="header-subtext" style="font-weight: bold; margin-top: 2px;">Dipartimento di Salute Mentale</div>
-                    <div class="header-subtext">Centro per i Disturbi del Comportamento Alimentare (DCA)</div>
-                </td>
-                <td style="width: 30%; text-align: right; vertical-align: top; font-size: 9pt;">
-                    <strong>Cod. Struttura:</strong> dca-rov-05<br>
-                    <strong>Data Stampa:</strong> <input type="text" value="13/07/2026" style="width: 70px; text-align: right; font-size: 9pt;">
-                </td>
-            </tr>
-        </table>
-        
-        <div class="doc-title">Referto di Valutazione / Monitoraggio Clinico DCA</div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">1. Dati Anagrafici del Paziente</div>
-        <table class="form-table">
-            <tr>
-                <td style="width: 50%;"><span class="label">Cognome:</span> <input type="text" placeholder="......................................................"></td>
-                <td style="width: 50%;"><span class="label">Nome:</span> <input type="text" placeholder="......................................................"></td>
-            </tr>
-            <tr>
-                <td><span class="label">Data di Nascita:</span> <input type="date"></td>
-                <td><span class="label">Codice Fiscale:</span> <input type="text" style="text-transform: uppercase;" placeholder="......................................................"></td>
-            </tr>
-            <tr>
-                <td><span class="label">Comune di Residenza:</span> <input type="text" placeholder="Rovigo o prov."></td>
-                <td><span class="label">Recapito Telefonico:</span> <input type="text" placeholder="......................................................"></td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="section">
-        <div class="section-title">2. Rilevazioni Parametri Clinici e Antropometrici</div>
-        <table class="form-table" style="text-align: center;">
-            <thead>
-                <tr>
-                    <th style="width: 20%; text-align: center;">Peso (Kg)</th>
-                    <th style="width: 20%; text-align: center;">Altezza (m)</th>
-                    <th style="width: 20%; text-align: center;">B.M.I. calcolato</th>
-                    <th style="width: 20%; text-align: center;">Pressione Art. (mmHg)</th>
-                    <th style="width: 20%; text-align: center;">Frequenza Card. (bpm)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="number" step="0.1" style="text-align: center;"></td>
-                    <td><input type="number" step="0.01" style="text-align: center;"></td>
-                    <td><input type="number" step="0.1" style="text-align: center;"></td>
-                    <td><input type="text" style="text-align: center;" placeholder="es. 120/80"></td>
-                    <td><input type="number" style="text-align: center;"></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <table class="form-table" style="margin-top: 10px;">
-            <thead>
-                <tr>
-                    <th style="width: 40%;">Indicatore Comportamentale (Ultime 24h/Settimana)</th>
-                    <th style="width: 20%; text-align: center;">Frequenza/Presenza</th>
-                    <th style="width: 40%;">Note Specifiche</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Restrizione Alimentare Quantitativa</td>
-                    <td><input type="text" style="text-align: center;" placeholder="Sì / No / Parziale"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Episodi di Abbuffata Compulsiva</td>
-                    <td><input type="text" style="text-align: center;" placeholder="N° episodi"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Condotte di Eliminazione (Vomito/Lassativi)</td>
-                    <td><input type="text" style="text-align: center;" placeholder="Sì / No"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Iperattività Fisica Compensatoria</td>
-                    <td><input type="text" style="text-align: center;" placeholder="Grado Lieve/Mod/Severo"></td>
-                    <td><input type="text"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="section">
-        <div class="section-title">3. Schema Terapia Farmacologica in Atto</div>
-        <table class="form-table">
-            <thead>
-                <tr>
-                    <th style="width: 40%;">Principio Attivo / Farmaco</th>
-                    <th style="width: 20%; text-align: center;">Dosaggio</th>
-                    <th style="width: 40%;">Posologia e Orari di Assunzione</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text" style="text-align: center;"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text" style="text-align: center;"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text" style="text-align: center;"></td>
-                    <td><input type="text"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="section">
-        <div class="section-title">4. Note Cliniche, Sintesi del Colloquio e Valutazione Psico-Nutrizionale</div>
-        <div class="notes-area">
-            <textarea rows="6" placeholder="Inserire le considerazioni cliniche del team multidisciplinare (Psichiatra, Psicologo, Dietista)..."></textarea>
+    <div class="header-container">
+        <div class="header-left">
+            <div style="font-size: 10pt; font-weight: bold; color: #555555; text-transform: uppercase; margin-bottom: 3px;">Regione del Veneto</div>
+            <h1 class="institution-title">Azienda ULSS 5 Polesana</h1>
+            <div class="sub-institution">Dipartimento di Salute Mentale - S.C. Psichiatria Rovigo</div>
+            <div class="department-text">Centro Specializzato per i Disturbi del Comportamento Alimentare (DCA)</div>
+            <div class="department-text" style="font-size: 8pt; margin-top: 4px;">Sede: Ambulatorio Integrato Multidisciplinare Territoriale</div>
+        </div>
+        <div class="header-right">
+            <div class="barcode-sticker-box">
+                Spazio per etichetta autoadesiva anagrafica<br>
+                <span style="font-size: 6.5pt; color: #888888;">(Cognome, Nome, Data Nascita, ID Paziente)</span>
+            </div>
         </div>
     </div>
 
-    <table class="footer-signatures">
+    <table style="width: 100%; margin-bottom: 5px;">
         <tr>
-            <td>
-                Firma del Paziente / Familiare (se minore)
-                <div class="signature-space"></div>
+            <td style="width: 50%; font-size: 9pt;">
+                <strong>Codice Interno Struttura:</strong> DSM-DCA-RO-2026<br>
+                <strong>Tipo Accesso:</strong> 
+                <select style="width: auto; font-size: 9pt; font-weight: bold;">
+                    <option>Ambulatoriale</option>
+                    <option>Day Hospital / MAC</option>
+                    <option>Consulenza di Reparto</option>
+                </select>
             </td>
-            <td>
-                Il Medico / Operatore Centro DCA Rovigo
-                <div class="signature-space"></div>
+            <td style="width: 50%; text-align: right; font-size: 9pt; vertical-align: bottom;">
+                <strong>Data Rilascio:</strong> <input type="date" style="width: 120px; text-align: right; font-weight: bold;">
             </td>
         </tr>
     </table>
 
-    <div class="footer-info">
-        Azienda ULSS 5 Polesana - Sede Legale: Viale Tre Martiri, 89 - 45100 Rovigo (RO)<br>
-        Centro per i Disturbi del Comportamento Alimentare - Ambulatorio Specialistico Territoriale<br>
-        Contatti e info: Tel. Ospedale Rovigo Segreteria DSM | Documentazione Clinica Strettamente Riservata - Segreto Professionale (D.Lgs. 196/2003)
+    <div class="doc-title-box">
+        <h2 class="doc-title">Verbale di Valutazione e Monitoraggio Clinico Multidisciplinare</h2>
     </div>
 
-</div>
+    <div class="section">
+        <div class="section-title">1. Identificazione dell'Utente (Laddove non presente Etichetta)</div>
+        <table class="form-table">
+            <tr>
+                <td style="width: 35%;"><strong>Cognome:</strong> <input type="text" placeholder="......................................................"></td>
+                <td style="width: 35%;"><strong>Nome:</strong> <input type="text" placeholder="......................................................"></td>
+                <td style="width: 30%;"><strong>Codice Fiscale:</strong> <input type="text" style="text-transform: uppercase; font-family: monospace;" placeholder="................................"></td>
+            </tr>
+            <tr>
+                <td><strong>Data di Nascita:</strong> <input type="date"></td>
+                <td><strong>Sesso:</strong> 
+                    <select style="width: 60px;">
+                        <option value=""></option>
+                        <option value="F">F</option>
+                        <option value="M">M</option>
+                    </select>
+                </td>
+                <td><strong>Comune di Residenza:</strong> <input type="text" placeholder="Rovigo o cap./prov."></td>
+            </tr>
+            <tr>
+                <td><strong>Recapito Telefonico:</strong> <input type="text" placeholder="......................................................"></td>
+                <td colspan="2"><strong>Medico di Medicina Generale (MMG) di riferimento:</strong> <input type="text" placeholder="Dr. / Dr.ssa ......................................................"></td>
+            </tr>
+        </table>
+    </div>
 
-</body>
-</html>
+    <div class="section">
+        <div class="section-title">2. Inquadramento Prestazione ed Esenzione</div>
+        <table class="form-table">
+            <tr>
+                <td style="width: 50%;">
+                    <strong>Classe di Priorità del Primo Accesso:</strong><br>
+                    <span class="checkbox-label"><input type="checkbox"><strong>U</strong> (Urgente)</span>
+                    <span class="checkbox-label"><input type="checkbox"><strong>B</strong> (Breve)</span>
+                    <span class="checkbox-label"><input type="checkbox"><strong>D</strong> (Differibile)</span>
+                    <span class="checkbox-label"><input type="checkbox"><strong>P</strong> (Programmata)</span>
+                </td>
+                <td style="width: 50%; vertical-align: top;">
+                    <strong>Codice Esenzione Patologia:</strong> 
+                    <input type="text" style="width: 100px; border-bottom: 1px solid #000; text-align: center; font-weight: bold;" placeholder="es. R99 / 005">
+                    <span style="font-size: 8pt; color: #555555; display: block; margin-top: 3px;">Specificare se esente per patologia specifica DCA</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">3. Rilevazioni Obiettive, Parametri Vitali e Screening Clinico</div>
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th style="width: 16%; text-align: center;">Peso Attuale (Kg)</th>
+                    <th style="width: 16%; text-align: center;">Altezza (m)</th>
+                    <th style="width: 16%; text-align: center;">B.M.I. Rilevato</th>
+                    <th style="th: 16%; text-align: center;">Peso Target (Target Wm)</th>
+                    <th style="width: 20%; text-align: center;">Pressione Art. (mmHg)</th>
+                    <th style="width: 16%; text-align: center;">Frequenza Card. (bpm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" step="0.1" class="center-input" placeholder="00.0"></td>
+                    <td><input type="number" step="0.01" class="center-input" placeholder="1.00"></td>
+                    <td><input type="number" step="0.1" class="center-input" placeholder="00.0" style="font-weight: bold;"></td>
+                    <td><input type="number" step="0.1" class="center-input" placeholder="00.0"></td>
+                    <td>
+                        <input type="text" class="center-input" placeholder="Clinostatismo (es.110/70)" style="font-size: 8pt; border-bottom: 1px dotted #ccc; margin-bottom: 2px;">
+                        <input type="text" class="center-input" placeholder="Ortostatismo (es.95/60)" style="font-size: 8pt;">
+                    </td>
+                    <td><input type="number" class="center-input" placeholder="R
