@@ -4,248 +4,36 @@
     <meta charset="UTF-8">
     <title>Referto Clinico Multidisciplinare DCA - ULSS 5 Polesana</title>
     <style>
-        /* RESET & PRINT MANAGEMENT */
-        * {
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #000000;
-        }
+        * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; color: #000000; }
+        body { margin: 0; padding: 10mm; background-color: #ffffff; font-size: 10pt; line-height: 1.3; }
+        .page-container { width: 100%; max-width: 190mm; margin: 0 auto; position: relative; }
         
-        body {
-            margin: 0;
-            padding: 10mm;
-            background-color: #ffffff;
-            font-size: 10pt;
-            line-height: 1.3;
-        }
+        /* INTESTAZIONE ORIGINALE */
+        .header-container { display: table; width: 100%; border-bottom: 3px double #000000; padding-bottom: 8px; margin-bottom: 15px; }
+        .header-left { display: table-cell; width: 65%; vertical-align: top; }
+        .header-right { display: table-cell; width: 35%; vertical-align: top; text-align: right; }
+        .institution-title { font-size: 13pt; font-weight: bold; text-transform: uppercase; margin: 0; }
+        .sub-institution { font-size: 9.5pt; font-weight: 600; margin: 2px 0; }
+        .department-text { font-size: 9pt; font-style: italic; margin: 1px 0; }
+        .barcode-sticker-box { border: 1px dashed #444444; padding: 15px 5px; text-align: center; font-size: 7.5pt; background-color: #fafafa; }
 
-        /* CONTENITORE FORMATO A4 */
-        .page-container {
-            width: 100%;
-            max-width: 190mm;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* INTESTAZIONE UFFICIALE REGIONE VENETO / ULSS 5 */
-        .header-container {
-            display: table;
-            width: 100%;
-            border-bottom: 3px double #000000;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
-
-        .header-left {
-            display: table-cell;
-            width: 65%;
-            vertical-align: top;
-        }
-
-        .header-right {
-            display: table-cell;
-            width: 35%;
-            vertical-align: top;
-            text-align: right;
-        }
-
-        .institution-title {
-            font-size: 13pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0;
-        }
-
-        .sub-institution {
-            font-size: 9.5pt;
-            font-weight: 600;
-            margin: 2px 0;
-        }
-
-        .department-text {
-            font-size: 9pt;
-            font-style: italic;
-            margin: 1px 0;
-        }
-
-        /* SPAZIO ETICHETTA PAZIENTE */
-        .barcode-sticker-box {
-            border: 1px dashed #444444;
-            padding: 15px 5px;
-            text-align: center;
-            font-size: 7.5pt;
-            color: #555555;
-            background-color: #fafafa;
-            text-transform: uppercase;
-            min-height: 55px;
-        }
-
-        .doc-title-box {
-            text-align: center;
-            margin: 15px 0;
-            padding: 5px;
-            background-color: #f0f0f0;
-            border: 1px solid #000000;
-        }
-
-        .doc-title {
-            font-size: 13pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-        /* STRUTTURA SEZIONI */
-        .section {
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: 9.5pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            background-color: #e1e1e1;
-            border: 1px solid #000000;
-            padding: 3px 6px;
-            margin-bottom: 5px;
-        }
-
-        /* TABELLE STRUTTURATE */
-        .form-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 5px;
-        }
-
-        .form-table td, .form-table th {
-            border: 1px solid #000000;
-            padding: 4px 6px;
-            vertical-align: middle;
-            font-size: 9pt;
-        }
-
-        .form-table th {
-            background-color: #f9f9f9;
-            font-weight: bold;
-            text-align: left;
-            text-transform: uppercase;
-            font-size: 8.5pt;
-        }
-
-        /* INPUT INTERATTIVI COMPILABILI */
-        input[type="text"], input[type="date"], input[type="number"], select, textarea {
-            width: 100%;
-            border: none;
-            background: transparent;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 9.5pt;
-            padding: 2px 0;
-            margin: 0;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            background-color: #f5f8ff;
-            }
-
-        textarea {
-            resize: vertical;
-            line-height: 1.4;
-        }
-
-        .center-input {
-            text-align: center;
-        }
-
-        /* CHECKBOXES */
-        .checkbox-label {
-            display: inline-block;
-            margin-right: 15px;
-            font-size: 9pt;
-            cursor: pointer;
-        }
-
-        .checkbox-label input {
-            vertical-align: middle;
-            margin-right: 4px;
-        }
-
-        /* SEZIONI SPECIFICHE DI COMPILAZIONE */
-        .notes-container {
-            border: 1px solid #000000;
-            padding: 6px;
-            min-height: 160px;
-            background-color: #ffffff;
-        }
-
-        /* FIRME E FOOTER */
-        .signature-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-            page-break-inside: avoid;
-        }
-
-        .signature-table td {
-            width: 33%;
-            border: none;
-            text-align: center;
-            font-size: 8.5pt;
-            vertical-align: top;
-        }
-
-        .sig-line {
-            margin-top: 35px;
-            border-top: 1px dashed #000000;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer-info {
-            margin-top: 25px;
-            border-top: 1px solid #000000;
-            padding-top: 5px;
-            font-size: 7.5pt;
-            text-align: center;
-            line-height: 1.3;
-            color: #333333;
-            page-break-inside: avoid;
-        }
-
-        /* REGOLE DI STAMPA RIGIDE */
-        @media print {
-            body {
-                padding: 0;
-                background-color: #ffffff;
-            }
-            .page-container {
-                max-width: 100%;
-                padding: 0;
-            }
-            input:focus, textarea:focus {
-                background-color: transparent;
-            }
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-            input[type=number] {
-                -moz-appearance: textfield;
-            }
-            .no-print {
-                display: none;
-            }
-            select {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                background: transparent;
-            }
-        }
+        /* STRUTTURA */
+        .doc-title-box { text-align: center; margin: 15px 0; padding: 5px; background-color: #f0f0f0; border: 1px solid #000000; }
+        .doc-title { font-size: 13pt; font-weight: bold; text-transform: uppercase; margin: 0; }
+        .section { margin-bottom: 12px; }
+        .section-title { font-size: 9.5pt; font-weight: bold; text-transform: uppercase; background-color: #e1e1e1; border: 1px solid #000000; padding: 3px 6px; margin-bottom: 5px; }
+        .form-table { width: 100%; border-collapse: collapse; margin-bottom: 5px; }
+        .form-table td, .form-table th { border: 1px solid #000000; padding: 4px 6px; font-size: 9pt; }
+        .form-table th { background-color: #f9f9f9; text-transform: uppercase; }
+        input[type="text"], input[type="date"], input[type="number"], select, textarea { width: 100%; border: none; background: transparent; font-family: Arial, Helvetica, sans-serif; font-size: 9.5pt; }
+        .center-input { text-align: center; }
+        .notes-container { border: 1px solid #000000; padding: 6px; min-height: 100px; }
+        
+        /* FOOTER ORIGINALE */
+        .signature-table { width: 100%; border-collapse: collapse; margin-top: 30px; page-break-inside: avoid; }
+        .signature-table td { width: 33%; border: none; text-align: center; font-size: 8.5pt; vertical-align: top; }
+        .sig-line { margin-top: 35px; border-top: 1px dashed #000000; width: 80%; margin-left: auto; margin-right: auto; }
+        .footer-info { margin-top: 25px; border-top: 1px solid #000000; padding-top: 5px; font-size: 7.5pt; text-align: center; line-height: 1.3; }
     </style>
 </head>
 <body>
@@ -258,55 +46,10 @@
             <h1 class="institution-title">Azienda ULSS 5 Polesana</h1>
             <div class="sub-institution">Dipartimento di Salute Mentale - S.C. Psichiatria Rovigo</div>
             <div class="department-text">Centro Specializzato per i Disturbi del Comportamento Alimentare (DCA)</div>
-            <div class="department-text" style="font-size: 8pt; margin-top: 4px;">Sede: Ambulatorio Integrato Multidisciplinare Territoriale</div>
         </div>
         <div class="header-right">
-            <div class="barcode-sticker-box">
-                Spazio per etichetta autoadesiva anagrafica<br>
-                <span style="font-size: 6.5pt; color: #888888;">(Cognome, Nome, Data Nascita, ID Paziente)</span>
-            </div>
+            <div class="barcode-sticker-box">Spazio etichetta anagrafica</div>
         </div>
-    </div>
-
-    <table style="width: 100%; margin-bottom: 15px; border-collapse: collapse;">
-        <tr>
-            <td style="width: 38%; font-size: 9pt; vertical-align: middle;">
-                <strong>Codice Interno Struttura:</strong> DSM-DCA-RO-2026
-            </td>
-            <td style="width: 32%; font-size: 9pt; vertical-align: middle;">
-                <strong>Tipo Accesso:</strong> 
-                <select name="tipo_accesso" style="width: auto; font-size: 9pt; font-weight: bold; display: inline-block;">
-                    <option>Ambulatoriale</option>
-                    <option selected>Day Hospital / MAC</option>
-                    <option>Consulenza di Reparto</option>
-                </select>
-            </td>
-            <td style="width: 30%; text-align: right; font-size: 9pt; vertical-align: middle;">
-                <strong>Data Rilascio:</strong> <input type="date" name="data_rilascio" style="width: 120px; text-align: right; font-weight: bold;" value="2026-07-13">
-            </td>
-        </tr>
-    </table>
-
-    <div class="section">
-        <div class="section-title">Gestione Arrivo e Assegnazione Priorità</div>
-        <table class="form-table">
-            <tr>
-                <td style="width: 50%; vertical-align: top;">
-                    <strong>Accesso avvenuto con:</strong><br>
-                    <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="A"><strong>A</strong> (Ambulanza)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="E"><strong>E</strong> (Elisoccorso)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="I" checked><strong>I</strong> (Autonomia)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="Altro"><strong>X</strong> (Altro)</label>
-                </td>
-                <td style="width: 50%; vertical-align: top;">
-                    <strong>Colore priorità paziente / Classe di Priorità del Primo Accesso:</strong><br>
-                    <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="B"><strong>B</strong> (Bianco)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="V" checked><strong>V</strong> (Verde)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="G"><strong>G</strong> (Giallo)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="R"><strong>R</strong> (Rosso)</label>
-                </td>
-            </tr>
-        </table>
     </div>
 
     <div class="doc-title-box">
@@ -314,243 +57,86 @@
     </div>
 
     <div class="section">
-        <div class="section-title">1. Identificazione dell'Utente (Laddove non presente Etichetta)</div>
+        <div class="section-title">1. Identificazione Utente</div>
         <table class="form-table">
             <tr>
-                <td style="width: 35%;"><strong>Cognome:</strong> <input type="text" name="cognome" value="Finaldi"></td>
-                <td style="width: 35%;"><strong>Nome:</strong> <input type="text" name="nome" value="Luca"></td>
-                <td style="width: 30%;"><strong>Codice Fiscale:</strong> <input type="text" name="cf" style="text-transform: uppercase; font-family: monospace;" value="FNLLCU05D07D325R"></td>
-            </tr>
-            <tr>
-                <td><strong>Data di Nascita:</strong> <input type="date" name="data_nascita" value="2005-04-07"></td>
-                <td><strong>Sesso:</strong> 
-                    <select name="sesso" style="width: 60px;">
-                        <option value=""></option>
-                        <option value="F">F</option>
-                        <option value="M" selected>M</option>
-                    </select>
-                </td>
-                <td><strong>Comune di Residenza:</strong> <input type="text" name="residenza" value="Scorzè (VE)"></td>
-            </tr>
-            <tr>
-                <td><strong>Recapito Telefonico:</strong> <input type="text" name="telefono" value="3924484032"></td>
-                <td colspan="2"><strong>Medico di Medicina Generale (MMG) di riferimento:</strong> <input type="text" name="mmg" value="Laura Gherardini"></td>
+                <td><strong>Cognome:</strong> <input type="text" value="Finaldi"></td>
+                <td><strong>Nome:</strong> <input type="text" value="Luca"></td>
+                <td><strong>Data Nascita:</strong> <input type="date" value="2005-04-07"></td>
             </tr>
         </table>
     </div>
 
     <div class="section">
-        <div class="section-title">2. Inquadramento Prestazione ed Esenzione</div>
+        <div class="section-title">2. Parametri Antropometrici e Bioumorali</div>
         <table class="form-table">
             <tr>
-                <td style="width: 50%;">
-                    <strong>Classe di Priorità del Primo Accesso:</strong><br>
-                    <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="U"><strong>U</strong> (Urgente)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="B" checked><strong>B</strong> (Breve)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="D"><strong>D</strong> (Differibile)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="P"><strong>P</strong> (Programmata)</label>
-                </td>
-                <td style="width: 50%; vertical-align: top;">
-                    <strong>Codice Esenzione Patologia:</strong> 
-                    <input type="text" name="esenzione" style="width: 100px; border-bottom: 1px solid #000000; text-align: center; font-weight: bold;" value="R87/28">
-                    <span style="font-size: 8pt; color: #555555; display: block; margin-top: 3px;">Esente per patologia specifica DCA</span>
-                </td>
+                <th>Peso (Kg)</th><th>Altezza (m)</th><th>B.M.I.</th><th>Frequenza Card.</th>
+            </tr>
+            <tr>
+                <td><input type="number" step="0.1" value="55.0" class="center-input"></td>
+                <td><input type="number" step="0.01" value="1.82" class="center-input"></td>
+                <td><input type="number" step="0.1" value="16.6" class="center-input" style="font-weight:bold;"></td>
+                <td><input type="text" value="58 bpm" class="center-input"></td>
             </tr>
         </table>
     </div>
 
     <div class="section">
-        <div class="section-title">3. Rilevazioni Obiettive, Parametri Vitali e Screening Clinico</div>
-        <table class="form-table">
-            <thead>
-                <tr>
-                    <th style="width: 16%; text-align: center;">Peso Attuale (Kg)</th>
-                    <th style="width: 16%; text-align: center;">Altezza (m)</th>
-                    <th style="width: 16%; text-align: center;">B.M.I. Rilevato</th>
-                    <th style="width: 16%; text-align: center;">Peso Target (Kg)</th>
-                    <th style="width: 20%; text-align: center;">Pressione Art. (mmHg)</th>
-                    <th style="width: 16%; text-align: center;">Frequenza Card. (bpm)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="number" step="0.1" name="peso" class="center-input" value="66"></td>
-                    <td><input type="number" step="0.01" name="altezza" class="center-input" value="1.82"></td>
-                    <td><input type="number" step="0.1" name="bmi" class="center-input" value="19.9" style="font-weight: bold;"></td>
-                    <td><input type="number" step="0.1" name="peso_target" class="center-input" value="66"></td>
-                    <td>
-                        <input type="text" name="pa_clino" class="center-input" value="Clinostatismo: 110/70" style="font-size: 8pt; border-bottom: 1px dotted #ccc; margin-bottom: 2px;">
-                        <input type="text" name="pa_orto" class="center-input" value="Ortostatismo: 105/65" style="font-size: 8pt;">
-                    </td>
-                    <td><input type="number" name="fc" class="center-input" value="68"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="form-table" style="margin-top: 4px;">
-            <thead>
-                <tr>
-                    <th style="width: 25%; text-align: center;">Elettrocardiogramma: QTc (msec)</th>
-                    <th style="width: 25%; text-align: center;">Potassiemia - K+ (mEq/L)</th>
-                    <th style="width: 25%; text-align: center;">Sodiemia - Na+ (mEq/L)</th>
-                    <th style="width: 25%; text-align: center;">Temperatura Corporea (°C)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" name="qtc" class="center-input" value="410"></td>
-                    <td><input type="text" name="potassiemia" class="center-input" value="3.1"></td>
-                    <td><input type="text" name="sodiemia" class="center-input" value="136"></td>
-                    <td><input type="number" step="0.1" name="temperatura" class="center-input" value="36.2"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="section">
-        <div class="section-title">4. Indicatori di Severità Comportamentale (Ultimo Periodo)</div>
-        <table class="form-table">
-            <thead>
-                <tr>
-                    <th style="width: 35%;">Cluster Sintomatologico</th>
-                    <th style="width: 25%; text-align: center;">Frequenza / Intensità</th>
-                    <th style="width: 40%;">Specifiche, Condotte Evitanti e Contesto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Restrizione Alimentare</strong></td>
-                    <td>
-                        <select name="restrizione_livello" class="center-input">
-                            <option value="">-- Seleziona --</option>
-                            <option selected>Assente</option>
-                            <option>Lieve (Introito ridotto)</option>
-                            <option>Moderata (Salti pasto)</option>
-                            <option>Grave / Estrema</option>
-                        </select>
-                    </td>
-                    <td><input type="text" name="restrizione_specifiche" value="Tentativi intermittenti seguiti da perdita di controllo"></td>
-                </tr>
-                <tr>
-                    <td><strong>Crisi Bulimiche / Abbuffate</strong></td>
-                    <td><input type="text" name="abbuffate_freq" class="center-input" value="4-5 a settimana"></td>
-                    <td><input type="text" name="abbuffate_specifiche" value="Grandi quantità di carboidrati e cibi ipercalorici"></td>
-                </tr>
-                <tr>
-                    <td><strong>Vomito Autoindotto / Eliminazione</strong></td>
-                    <td><input type="text" name="vomito_freq" class="center-input" value="Ogni dopo crisi"></td>
-                    <td><input type="text" name="vomito_specifiche" value="Vomito autoindotto riflesso/digitale sistematico"></td>
-                </tr>
-                <tr>
-                    <td><strong>Iperattività / Esercizio Compulsivo</strong></td>
-                    <td>
-                        <select name="iperattivita_livello" class="center-input">
-                            <option value="">-- Seleziona --</option>
-                            <option value="Non presente">Non presente</option>
-                            <option selected>Finalizzato al calo Kcal</option>
-                            <option>Rigido / Coatto (Urgenza interna)</option>
-                        </select>
-                    </td>
-                    <td><input type="text" name="iperattivita_specifiche" value="Attività compensatoria saltuaria post-episodio"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="section">
-        <div class="section-title">5. Inquadramento Diagnostico ed Orientamento Clinico (ICD / DSM)</div>
-        <table class="form-table">
-            <tr>
-                <td style="width: 50%; vertical-align: top;">
-                    <strong>Codice Diagnosi Principale (DSM-5 / ICD-10):</strong>
-                    <input type="text" name="diagnosi_princ" style="border-bottom: 1px solid #000000; margin-top: 5px; font-weight: bold;" value="307.51 (Bulimia Nervosa, con condotte di eliminazione sistematiche)">
-                </td>
-                <td style="width: 50%; vertical-align: top;">
-                    <strong>Eventuali Comorbilità Psichiatriche / Cliniche:</strong>
-                    <input type="text" name="comorbilita" style="border-bottom: 1px solid #000000; margin-top: 5px;" value="Disturbo d'Ansia Generalizzata, Episodio Depressivo Lieve, Tratti di DOC">
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="section">
-        <div class="section-title">6. Schema Terapia Farmacologica & Nutraceutica Integrativa</div>
-        <table class="form-table">
-            <thead>
-                <tr>
-                    <th style="width: 45%;">Principio Attivo / Specialità Medicinale</th>
-                    <th style="width: 20%; text-align: center;">Dosaggio Giornaliero</th>
-                    <th style="width: 35%;">Posologia e Modalità di Assunzione</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" name="farmaco_1" value="Xanax (Alprazolam)"></td>
-                    <td><input type="text" name="dosaggio_1" class="center-input" value="0.75 mg"></td>
-                    <td><input type="text" name="posologia_1" value="0.25 mg tre volte al giorno (Mattino, Mezzogiorno, Sera)"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="farmaco_2" value="Sertralina (Zoloft)"></td>
-                    <td><input type="text" name="dosaggio_2" class="center-input" value="100 mg"></td>
-                    <td><input type="text" name="posologia_2" value="1 compressa al mattino dopo colazione"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="section">
-        <div class="section-title">7. Sintesi dell'Esame Obiettivo Psichico, Colloquio Clinico e Valutazione Dietistica</div>
-        <div class="notes-container">
-            <textarea name="sintesi_clinica" rows="9">Paziente di 21 anni che presenta un quadro clinico pienamente compatibile con una diagnosi di Bulimia Nervosa (DSM-5 307.51). Al colloquio si evidenziano ricorrenti episodi di abbuffate oggettive (frequenza stimata di 4-5 eventi a settimana) caratterizzate da perdita del controllo sul comportamento alimentare, seguiti da condotte di compenso inappropriate di tipo evacuativo (vomito autoindotto sistematico). Attualmente il paziente mantiene un range ponderale di normopeso (BMI 19.9), coerente con l'inquadramento nosografico. Sul piano bioumorale si riscontra una severa ipopotassiemia (K+ 3.1 mEq/L) secondaria al vomito ripetuto, che richiede monitoraggio elettrolitico stretto ed ecg periodico per prevenire complicanze aritmiche. In comorbilità si rilevano flessione del tono dell'umore ed elevati livelli di ansia anticipatoria legata alla perdita di controllo. Si indica prosecuzione del trattamento in regime semi-residenziale integrato.</textarea>
+        <div class="section-title">3. Valutazione Comportamentale e Cognitiva (DOC / Cibo)</div>
+        <div style="border: 1px solid #000; padding: 10px; background: #fafafa;">
+            <label><input type="checkbox" checked> <strong>Rituali di simmetria:</strong> pesatura ossessiva e misurazione cibi.</label><br>
+            <label><input type="checkbox" checked> <strong>Rigidità cognitiva:</strong> pensieri intrusivi su calorie e controllo.</label><br>
+            <label><input type="checkbox"> <strong>Controlli rassicurativi:</strong> verifica multipla etichette.</label><br>
+            <label><input type="checkbox" checked> <strong>Rituali post-prandiali:</strong> condotte compensatorie ripetitive.</label>
+            <textarea placeholder="Note su ossessioni e compulsioni correlate al cibo..." rows="3"></textarea>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">8. Programma Clinico Integrato e Follow-Up</div>
+        <div class="section-title">4. Indicatori Bulimia Nervosa</div>
         <table class="form-table">
+            <tr><th>Condotta</th><th>Frequenza</th><th>Specifiche</th></tr>
             <tr>
-                <td style="width: 60%;">
-                    <strong>Prossimo Controllo programmato presso il Centro:</strong><br>
-                    <input type="text" name="prossimo_controllo" value="Dopo 7 gg per controllo elettrolitico, priorità: B, presso Ambulatorio DCA" style="margin-top: 5px;">
-                </td>
-                <td style="width: 40%; vertical-align: top;">
-                    <strong>Livello di Cura Indicato:</strong><br>
-                    <select name="livello_cura" style="margin-top: 5px; font-weight: bold;">
-                        <option>Trattamento Ambulatoriale Monoprofessionale</option>
-                        <option>Trattamento Ambulatoriale Integrato (Equipe)</option>
-                        <option selected>Semi-residenziale (Centro Diurno DCA)</option>
-                        <option>Residenziale Riabilitativo Extra-regione / Veneto</option>
-                        <option>Ricovero Ospedaliero di Urgenza (Nutrizione Artificiale / Salvavita)</option>
-                    </select>
-                </td>
+                <td>Abbuffate Oggettive</td>
+                <td><input type="text" value="5/settimana"></td>
+                <td><input type="text" value="Carboidrati ipercalorici"></td>
+            </tr>
+            <tr>
+                <td>Vomito Autoindotto</td>
+                <td><input type="text" value="Quotidiano"></td>
+                <td><input type="text" value="Sistematico post-crisi"></td>
             </tr>
         </table>
     </div>
 
+    <div class="section">
+        <div class="section-title">5. Monitoraggio Scale Cliniche (Y-BOCS / EDE-Q)</div>
+        <table class="form-table">
+            <tr><th>Scala</th><th>Punteggio</th><th>Data</th></tr>
+            <tr><td>Y-BOCS (DOC)</td><td><input type="number" class="center-input"></td><td><input type="date"></td></tr>
+            <tr><td>EDE-Q (DCA)</td><td><input type="number" class="center-input"></td><td><input type="date"></td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">6. Sintesi Clinica</div>
+        <div class="notes-container">
+            <textarea rows="5">Paziente in trattamento per Bulimia Nervosa con marcata comorbilità di tipo ossessivo-compulsivo. BMI 16.6. Si osserva forte rigidità cognitiva legata al cibo e comportamenti ritualistici. Necessario monitoraggio elettrolitico e approccio terapeutico di esposizione con prevenzione della risposta (ERP).</textarea>
+        </div>
+    </div>
+
     <table class="signature-table">
         <tr>
-            <td>
-                <strong>L'Utente / Esercente Potestà Genitoriale</strong><br>
-                <span style="font-size: 7.5pt; color: #555555;">(Per presa visione e consenso al percorso terapeutico)</span>
-                <div class="sig-line"></div>
-            </td>
-            <td>
-                <strong>Il Medico Specialista / Psichiatra</strong><br>
-                <span style="font-size: 7.5pt; color: #555555;">(Timbro e Firma leggibile)</span>
-                <div class="sig-line"></div>
-            </td>
-            <td>
-                <strong>L'Operatore Sanitario Equipe DCA</strong><br>
-                <span style="font-size: 7.5pt; color: #555555;">(Psicologo / Dietista / Infermiere)</span>
-                <div class="sig-line"></div>
-            </td>
+            <td><strong>L'Utente</strong><div class="sig-line"></div></td>
+            <td><strong>Medico Specialista</strong><div class="sig-line"></div></td>
+            <td><strong>Equipe DCA</strong><div class="sig-line"></div></td>
         </tr>
     </table>
 
     <div class="footer-info">
-        Azienda ULSS 5 Polesana - Sede Legale: Viale Tre Martiri, 89 - 45100 Rovigo (RO) | Tel. Centralino Ospedaliero Rovigo<br>
-        Dipartimento di Salute Mentale - Centro DCA Territoriale / Ambulatorio per i Disturbi della Nutrizione e dell'Alimentazione<br>
-        <strong>DOCUMENTAZIONE CLINICA STRETTAMENTE RISERVATA</strong> Rilasciata il 13/07/2026 alle ore 13:52 - Coperta da Segreto Professionale e d'Ufficio ai sensi del GDPR UE 2016/679 e D.Lgs. 196/2003 e s.m.i.
+        Azienda ULSS 5 Polesana - Sede Legale: Viale Tre Martiri, 89 - 45100 Rovigo (RO)<br>
+        <strong>DOCUMENTAZIONE CLINICA RISERVATA</strong> - Coperta da Segreto Professionale (GDPR UE 2016/679)
     </div>
 
 </div>
