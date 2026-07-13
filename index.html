@@ -4,36 +4,207 @@
     <meta charset="UTF-8">
     <title>Referto Clinico Multidisciplinare DCA - ULSS 5 Polesana</title>
     <style>
-        * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; color: #000000; }
-        body { margin: 0; padding: 10mm; background-color: #ffffff; font-size: 10pt; line-height: 1.3; }
-        .page-container { width: 100%; max-width: 190mm; margin: 0 auto; position: relative; }
+        /* RESET & PRINT MANAGEMENT */
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000000;
+        }
         
-        /* INTESTAZIONE ORIGINALE */
-        .header-container { display: table; width: 100%; border-bottom: 3px double #000000; padding-bottom: 8px; margin-bottom: 15px; }
-        .header-left { display: table-cell; width: 65%; vertical-align: top; }
-        .header-right { display: table-cell; width: 35%; vertical-align: top; text-align: right; }
-        .institution-title { font-size: 13pt; font-weight: bold; text-transform: uppercase; margin: 0; }
-        .sub-institution { font-size: 9.5pt; font-weight: 600; margin: 2px 0; }
-        .department-text { font-size: 9pt; font-style: italic; margin: 1px 0; }
-        .barcode-sticker-box { border: 1px dashed #444444; padding: 15px 5px; text-align: center; font-size: 7.5pt; background-color: #fafafa; }
+        body {
+            margin: 0;
+            padding: 10mm;
+            background-color: #ffffff;
+            font-size: 10pt;
+            line-height: 1.3;
+        }
 
-        /* STRUTTURA */
-        .doc-title-box { text-align: center; margin: 15px 0; padding: 5px; background-color: #f0f0f0; border: 1px solid #000000; }
-        .doc-title { font-size: 13pt; font-weight: bold; text-transform: uppercase; margin: 0; }
-        .section { margin-bottom: 12px; }
-        .section-title { font-size: 9.5pt; font-weight: bold; text-transform: uppercase; background-color: #e1e1e1; border: 1px solid #000000; padding: 3px 6px; margin-bottom: 5px; }
-        .form-table { width: 100%; border-collapse: collapse; margin-bottom: 5px; }
-        .form-table td, .form-table th { border: 1px solid #000000; padding: 4px 6px; font-size: 9pt; }
-        .form-table th { background-color: #f9f9f9; text-transform: uppercase; }
-        input[type="text"], input[type="date"], input[type="number"], select, textarea { width: 100%; border: none; background: transparent; font-family: Arial, Helvetica, sans-serif; font-size: 9.5pt; }
+        /* CONTENITORE FORMATO A4 */
+        .page-container {
+            width: 100%;
+            max-width: 190mm;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* INTESTAZIONE UFFICIALE REGIONE VENETO / ULSS 5 */
+        .header-container {
+            display: table;
+            width: 100%;
+            border-bottom: 3px double #000000;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .header-left {
+            display: table-cell;
+            width: 65%;
+            vertical-align: top;
+        }
+
+        .header-right {
+            display: table-cell;
+            width: 35%;
+            vertical-align: top;
+            text-align: right;
+        }
+
+        .institution-title {
+            font-size: 13pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .sub-institution {
+            font-size: 9.5pt;
+            font-weight: 600;
+            margin: 2px 0;
+        }
+
+        .department-text {
+            font-size: 9pt;
+            font-style: italic;
+            margin: 1px 0;
+        }
+
+        .barcode-sticker-box {
+            border: 1px dashed #444444;
+            padding: 15px 5px;
+            text-align: center;
+            font-size: 7.5pt;
+            color: #555555;
+            background-color: #fafafa;
+            text-transform: uppercase;
+            min-height: 55px;
+        }
+
+        .doc-title-box {
+            text-align: center;
+            margin: 15px 0;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border: 1px solid #000000;
+        }
+
+        .doc-title {
+            font-size: 13pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 9.5pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: #e1e1e1;
+            border: 1px solid #000000;
+            padding: 3px 6px;
+            margin-bottom: 5px;
+        }
+
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 5px;
+        }
+
+        .form-table td, .form-table th {
+            border: 1px solid #000000;
+            padding: 4px 6px;
+            vertical-align: middle;
+            font-size: 9pt;
+        }
+
+        .form-table th {
+            background-color: #f9f9f9;
+            font-weight: bold;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 8.5pt;
+        }
+
+        input[type="text"], input[type="date"], input[type="number"], select, textarea {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9.5pt;
+            padding: 2px 0;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            background-color: #f5f8ff;
+        }
+
         .center-input { text-align: center; }
-        .notes-container { border: 1px solid #000000; padding: 6px; min-height: 100px; }
-        
-        /* FOOTER ORIGINALE */
-        .signature-table { width: 100%; border-collapse: collapse; margin-top: 30px; page-break-inside: avoid; }
-        .signature-table td { width: 33%; border: none; text-align: center; font-size: 8.5pt; vertical-align: top; }
-        .sig-line { margin-top: 35px; border-top: 1px dashed #000000; width: 80%; margin-left: auto; margin-right: auto; }
-        .footer-info { margin-top: 25px; border-top: 1px solid #000000; padding-top: 5px; font-size: 7.5pt; text-align: center; line-height: 1.3; }
+
+        .checkbox-label {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 9pt;
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .notes-container {
+            border: 1px solid #000000;
+            padding: 6px;
+            min-height: 160px;
+            background-color: #ffffff;
+        }
+
+        .signature-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            page-break-inside: avoid;
+        }
+
+        .signature-table td {
+            width: 33%;
+            border: none;
+            text-align: center;
+            font-size: 8.5pt;
+            vertical-align: top;
+        }
+
+        .sig-line {
+            margin-top: 35px;
+            border-top: 1px dashed #000000;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-info {
+            margin-top: 25px;
+            border-top: 1px solid #000000;
+            padding-top: 5px;
+            font-size: 7.5pt;
+            text-align: center;
+            line-height: 1.3;
+            color: #333333;
+            page-break-inside: avoid;
+        }
+
+        @media print {
+            body { padding: 0; background-color: #ffffff; }
+            .page-container { max-width: 100%; padding: 0; }
+            .no-print { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -46,38 +217,50 @@
             <h1 class="institution-title">Azienda ULSS 5 Polesana</h1>
             <div class="sub-institution">Dipartimento di Salute Mentale - S.C. Psichiatria Rovigo</div>
             <div class="department-text">Centro Specializzato per i Disturbi del Comportamento Alimentare (DCA)</div>
+            <div class="department-text" style="font-size: 8pt; margin-top: 4px;">Sede: Ambulatorio Integrato Multidisciplinare Territoriale</div>
         </div>
         <div class="header-right">
-            <div class="barcode-sticker-box">Spazio etichetta anagrafica</div>
+            <div class="barcode-sticker-box">
+                Spazio per etichetta autoadesiva anagrafica<br>
+                <span style="font-size: 6.5pt; color: #888888;">(Cognome, Nome, Data Nascita, ID Paziente)</span>
+            </div>
         </div>
     </div>
+
+    <table style="width: 100%; margin-bottom: 15px; border-collapse: collapse;">
+        <tr>
+            <td style="width: 38%; font-size: 9pt;"><strong>Codice Interno:</strong> DSM-DCA-RO-2026</td>
+            <td style="width: 32%; font-size: 9pt;"><strong>Tipo Accesso:</strong> <select><option>Day Hospital</option></select></td>
+            <td style="width: 30%; text-align: right; font-size: 9pt;"><strong>Data:</strong> <input type="date" value="2026-07-13"></td>
+        </tr>
+    </table>
 
     <div class="doc-title-box">
         <h2 class="doc-title">Verbale di Valutazione e Monitoraggio Clinico Multidisciplinare</h2>
     </div>
 
     <div class="section">
-        <div class="section-title">1. Identificazione Utente</div>
+        <div class="section-title">1. Identificazione dell'Utente</div>
         <table class="form-table">
             <tr>
-                <td><strong>Cognome:</strong> <input type="text" value="Finaldi"></td>
-                <td><strong>Nome:</strong> <input type="text" value="Luca"></td>
-                <td><strong>Data Nascita:</strong> <input type="date" value="2005-04-07"></td>
+                <td style="width: 35%;"><strong>Cognome:</strong> <input type="text" value="Finaldi"></td>
+                <td style="width: 35%;"><strong>Nome:</strong> <input type="text" value="Luca"></td>
+                <td style="width: 30%;"><strong>CF:</strong> <input type="text" value="FNLLCU05D07D325R"></td>
             </tr>
         </table>
     </div>
 
     <div class="section">
-        <div class="section-title">2. Parametri Antropometrici e Bioumorali</div>
+        <div class="section-title">2. Parametri Obiettivi e Bioumorali</div>
         <table class="form-table">
             <tr>
-                <th>Peso (Kg)</th><th>Altezza (m)</th><th>B.M.I.</th><th>Frequenza Card.</th>
+                <th>Peso (Kg)</th><th>Altezza (m)</th><th>B.M.I.</th><th>Pressione (mmHg)</th>
             </tr>
             <tr>
                 <td><input type="number" step="0.1" value="55.0" class="center-input"></td>
                 <td><input type="number" step="0.01" value="1.82" class="center-input"></td>
                 <td><input type="number" step="0.1" value="16.6" class="center-input" style="font-weight:bold;"></td>
-                <td><input type="text" value="58 bpm" class="center-input"></td>
+                <td><input type="text" value="110/70" class="center-input"></td>
             </tr>
         </table>
     </div>
@@ -94,7 +277,7 @@
     </div>
 
     <div class="section">
-        <div class="section-title">4. Indicatori Bulimia Nervosa</div>
+        <div class="section-title">4. Indicatori Severità Bulimia Nervosa</div>
         <table class="form-table">
             <tr><th>Condotta</th><th>Frequenza</th><th>Specifiche</th></tr>
             <tr>
@@ -120,7 +303,7 @@
     </div>
 
     <div class="section">
-        <div class="section-title">6. Sintesi Clinica</div>
+        <div class="section-title">6. Sintesi clinica</div>
         <div class="notes-container">
             <textarea rows="5">Paziente in trattamento per Bulimia Nervosa con marcata comorbilità di tipo ossessivo-compulsivo. BMI 16.6. Si osserva forte rigidità cognitiva legata al cibo e comportamenti ritualistici. Necessario monitoraggio elettrolitico e approccio terapeutico di esposizione con prevenzione della risposta (ERP).</textarea>
         </div>
