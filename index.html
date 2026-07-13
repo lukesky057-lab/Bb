@@ -269,12 +269,12 @@
                 <strong>Tipo Accesso:</strong> 
                 <select style="width: auto; font-size: 9pt; font-weight: bold;">
                     <option>Ambulatoriale</option>
-                    <option>Day Hospital / MAC</option>
+                    <option selected>Day Hospital / MAC</option>
                     <option>Consulenza di Reparto</option>
                 </select>
             </td>
             <td style="width: 50%; text-align: right; font-size: 9pt; vertical-align: bottom;">
-                <strong>Data Rilascio:</strong> <input type="date" style="width: 120px; text-align: right; font-weight: bold;">
+                <strong>Data Rilascio:</strong> <input type="date" style="width: 120px; text-align: right; font-weight: bold;" value="2026-07-13">
             </td>
         </tr>
     </table>
@@ -287,24 +287,24 @@
         <div class="section-title">1. Identificazione dell'Utente (Laddove non presente Etichetta)</div>
         <table class="form-table">
             <tr>
-                <td style="width: 35%;"><strong>Cognome:</strong> <input type="text" placeholder="......................................................"></td>
-                <td style="width: 35%;"><strong>Nome:</strong> <input type="text" placeholder="......................................................"></td>
-                <td style="width: 30%;"><strong>Codice Fiscale:</strong> <input type="text" style="text-transform: uppercase; font-family: monospace;" placeholder="................................"></td>
+                <td style="width: 35%;"><strong>Cognome:</strong> <input type="text" value="Finaldi"></td>
+                <td style="width: 35%;"><strong>Nome:</strong> <input type="text" value="Luca"></td>
+                <td style="width: 30%;"><strong>Codice Fiscale:</strong> <input type="text" style="text-transform: uppercase; font-family: monospace;" value="FNLLCU05D07D325R"></td>
             </tr>
             <tr>
-                <td><strong>Data di Nascita:</strong> <input type="date"></td>
+                <td><strong>Data di Nascita:</strong> <input type="date" value="2005-04-07"></td>
                 <td><strong>Sesso:</strong> 
                     <select style="width: 60px;">
                         <option value=""></option>
                         <option value="F">F</option>
-                        <option value="M">M</option>
+                        <option value="M" selected>M</option>
                     </select>
                 </td>
-                <td><strong>Comune di Residenza:</strong> <input type="text" placeholder="Rovigo o cap./prov."></td>
+                <td><strong>Comune di Residenza:</strong> <input type="text" value="Scorzè (VE)"></td>
             </tr>
             <tr>
-                <td><strong>Recapito Telefonico:</strong> <input type="text" placeholder="......................................................"></td>
-                <td colspan="2"><strong>Medico di Medicina Generale (MMG) di riferimento:</strong> <input type="text" placeholder="Dr. / Dr.ssa ......................................................"></td>
+                <td><strong>Recapito Telefonico:</strong> <input type="text" value="3924484032"></td>
+                <td colspan="2"><strong>Medico di Medicina Generale (MMG) di riferimento:</strong> <input type="text" value="Laura Gherardini"></td>
             </tr>
         </table>
     </div>
@@ -318,12 +318,12 @@
                     <span class="checkbox-label"><input type="checkbox"><strong>U</strong> (Urgente)</span>
                     <span class="checkbox-label"><input type="checkbox"><strong>B</strong> (Breve)</span>
                     <span class="checkbox-label"><input type="checkbox"><strong>D</strong> (Differibile)</span>
-                    <span class="checkbox-label"><input type="checkbox"><strong>P</strong> (Programmata)</span>
+                    <span class="checkbox-label"><input type="checkbox" checked><strong>P</strong> (Programmata)</span>
                 </td>
                 <td style="width: 50%; vertical-align: top;">
                     <strong>Codice Esenzione Patologia:</strong> 
-                    <input type="text" style="width: 100px; border-bottom: 1px solid #000; text-align: center; font-weight: bold;" placeholder="es. R99 / 005">
-                    <span style="font-size: 8pt; color: #555555; display: block; margin-top: 3px;">Specificare se esente per patologia specifica DCA</span>
+                    <input type="text" style="width: 100px; border-bottom: 1px solid #00; text-align: center; font-weight: bold;" value="R87/28">
+                    <span style="font-size: 8pt; color: #555555; display: block; margin-top: 3px;">Esente per patologia specifica DCA</span>
                 </td>
             </tr>
         </table>
@@ -337,22 +337,22 @@
                     <th style="width: 16%; text-align: center;">Peso Attuale (Kg)</th>
                     <th style="width: 16%; text-align: center;">Altezza (m)</th>
                     <th style="width: 16%; text-align: center;">B.M.I. Rilevato</th>
-                    <th style="th: 16%; text-align: center;">Peso Target (Target Wm)</th>
+                    <th style="width: 16%; text-align: center;">Peso Target (Target Wm)</th>
                     <th style="width: 20%; text-align: center;">Pressione Art. (mmHg)</th>
                     <th style="width: 16%; text-align: center;">Frequenza Card. (bpm)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="number" step="0.1" class="center-input" placeholder="00.0"></td>
-                    <td><input type="number" step="0.01" class="center-input" placeholder="1.00"></td>
-                    <td><input type="number" step="0.1" class="center-input" placeholder="00.0" style="font-weight: bold;"></td>
-                    <td><input type="number" step="0.1" class="center-input" placeholder="00.0"></td>
+                    <td><input type="number" step="0.1" class="center-input" value="58"></td>
+                    <td><input type="number" step="0.01" class="center-input" value="1.82"></td>
+                    <td><input type="number" step="0.1" class="center-input" value="17.5" style="font-weight: bold;"></td>
+                    <td><input type="number" step="0.1" class="center-input" value="65"></td>
                     <td>
-                        <input type="text" class="center-input" placeholder="Clinostatismo (es.110/70)" style="font-size: 8pt; border-bottom: 1px dotted #ccc; margin-bottom: 2px;">
-                        <input type="text" class="center-input" placeholder="Ortostatismo (es.95/60)" style="font-size: 8pt;">
+                        <input type="text" class="center-input" value="Clinostatismo: 100/60" style="font-size: 8pt; border-bottom: 1px dotted #ccc; margin-bottom: 2px;">
+                        <input type="text" class="center-input" value="Ortostatismo: 90/50" style="font-size: 8pt;">
                     </td>
-                    <td><input type="number" class="center-input" placeholder="Rilevata"></td>
+                    <td><input type="number" class="center-input" value="56"></td>
                 </tr>
             </tbody>
         </table>
@@ -368,10 +368,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" class="center-input" placeholder="Valore QTc"></td>
-                    <td><input type="text" class="center-input" placeholder="Valore K+"></td>
-                    <td><input type="text" class="center-input" placeholder="Valore Na+"></td>
-                    <td><input type="number" step="0.1" class="center-input" placeholder="00.0"></td>
+                    <td><input type="text" class="center-input" value="450"></td>
+                    <td><input type="text" class="center-input" value="3.6"></td>
+                    <td><input type="text" class="center-input" value="126"></td>
+                    <td><input type="number" step="0.1" class="center-input" value="32.4"></td>
                 </tr>
             </tbody>
         </table>
@@ -394,22 +394,22 @@
                         <select class="center-input">
                             <option value="">-- Seleziona --</option>
                             <option>Assente</option>
-                            <option>Lieve (Introito ridotto)</option>
+                            <option selected>Lieve (Introito ridotto)</option>
                             <option>Moderata (Salti pasto)</option>
                             <option>Grave / Estrema</option>
                         </select>
                     </td>
-                    <td><input type="text" placeholder="Note specifiche sugli alimenti evitati..."></td>
+                    <td><input type="text" value="Pasta, agglomerati, insaccati"></td>
                 </tr>
                 <tr>
                     <td><strong>Crisi Bulimiche / Abbuffate</strong></td>
-                    <td><input type="text" class="center-input" placeholder="N° episodi a settimana"></td>
-                    <td><input type="text" placeholder="Presenza di alimentazione oggettiva o soggettiva..."></td>
+                    <td><input type="text" class="center-input" value="0"></td>
+                    <td><input type="text" value="Riso, Cewgum, Acqua e derivati"></td>
                 </tr>
                 <tr>
                     <td><strong>Vomito Autoindotto / Eliminazione</strong></td>
-                    <td><input type="text" class="center-input" placeholder="N° condotte / Die"></td>
-                    <td><input type="text" placeholder="Uso concomitante di diuretici/lassativi..."></td>
+                    <td><input type="text" class="center-input" value="7"></td>
+                    <td><input type="text" value="Vomito autoridotto con dita e/o senza essi"></td>
                 </tr>
                 <tr>
                     <td><strong>Iperattività / Esercizio Compulsivo</strong></td>
@@ -417,11 +417,11 @@
                         <select class="center-input">
                             <option value="">-- Seleziona --</option>
                             <option>Non presente</option>
-                            <option>Finalizzato al compenso calorico</option>
+                            <option selected>Finalizzato al compenso calorico</option>
                             <option>Rigido / Coatto (Urgenza interna)</option>
                         </select>
                     </td>
-                    <td><input type="text" placeholder="Ore/giorno o tipologia di attività..."></td>
+                    <td><input type="text" value="2/3 ore gg. Palestra, camminate"></td>
                 </tr>
             </tbody>
         </table>
@@ -433,11 +433,11 @@
             <tr>
                 <td style="width: 50%; vertical-align: top;">
                     <strong>Codice Diagnosi Principale (DSM-5 / ICD-9-CM):</strong>
-                    <input type="text" style="border-bottom: 1px solid #000000; margin-top: 5px; font-weight: bold;" placeholder="es. 307.1 Anoressia Nervosa / 307.51 Bulimia">
+                    <input type="text" style="border-bottom: 1px solid #000000; margin-top: 5px; font-weight: bold;" value="307.51 (Bulimia Nervosa)">
                 </td>
                 <td style="width: 50%; vertical-align: top;">
                     <strong>Eventuali Comorbilità Psichiatriche / Cliniche:</strong>
-                    <input type="text" style="border-bottom: 1px solid #000000; margin-top: 5px;" placeholder="es. Disturbi d'Asse II, Asse I (Depressione, DOC), Celiachia">
+                    <input type="text" style="border-bottom: 1px solid #000000; margin-top: 5px;" value="Depressione, ansie, DOC, DCA (Bulimia nervosa)">
                 </td>
             </tr>
         </table>
@@ -455,14 +455,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" placeholder="1. .............................................................................."></td>
-                    <td><input type="text" class="center-input" placeholder="es. 20 mg"></td>
-                    <td><input type="text" placeholder="1 cp ore 08:00"></td>
+                    <td><input type="text" value="Xanax"></td>
+                    <td><input type="text" class="center-input" value="50mg"></td>
+                    <td><input type="text" value="Una pastiglia ogni 2 ore ai gg"></td>
                 </tr>
                 <tr>
-                    <td><input type="text" placeholder="2. .............................................................................."></td>
-                    <td><input type="text" class="center-input" placeholder=".................."></td>
-                    <td><input type="text" placeholder=".................................................................."></td>
+                    <td><input type="text" value="Dimavis 1000"></td>
+                    <td><input type="text" class="center-input" value="Bustine"></td>
+                    <td><input type="text" value="Una ogni 12 ore"></td>
                 </tr>
                 <tr>
                     <td><input type="text" placeholder="3. .............................................................................."></td>
@@ -481,7 +481,7 @@
     <div class="section">
         <div class="section-title">7. Sintesi dell'Esame Obiettivo Psichico, Colloquio Clinico e Valutazione Dietistica</div>
         <div class="notes-container">
-            <textarea rows="9" placeholder="Inserire qui la dettagliata descrizione clinica dell'andamento (Valutazione psicologica del vissuto corporeo, motivazione al cambiamento, compliance al piano nutrizionale, elementi di criticità emersi durante l'equipe medica multidisciplinare...)"></textarea>
+            <textarea rows="9">Paziente di 21 anni affetto da Bulimia Nervosa (BMI 17.50, sottopeso) in comorbilità con disturbi d'ansia, depressione e DOC. Il quadro clinico evidenzia una marcata compromissione internistica con grave ipotermia (32.4 °C), bradicardia (56 BPM) e iponatriemia severa (Na+ 126 mEq/L). Sul piano psicocomportamentale spiccano severe condotte di compenso, caratterizzate da vomito autoindotto frequente (valutazione 7) e iperattività fisica compulsiva (2-3 ore/die), a fronte di una lieve restrizione alimentare e in assenza di recenti crisi bulimiche oggettive. Si conferma l'indicazione a livello di cura presso la propria residenza con monitoraggio multidisciplinare a breve termine, in caso di indisponibilità della residenza (dichiarato dal paziente) si opta per un periodo che possibile vari dai 10 ai 20gg presso una struttura ospedaliera di Rovigo o dove richiede il paziente.</textarea>
         </div>
     </div>
 
@@ -491,14 +491,14 @@
             <tr>
                 <td style="width: 60%;">
                     <strong>Prossimo Controllo programmato presso il Centro:</strong><br>
-                    <input type="text" placeholder="Specificare data, ora e tipologia di operatore (Psichiatra, Psicologo, Dietista)..." style="margin-top: 5px;">
+                    <input type="text" value="Dopo 12 gg durante cura, priorità: P , CSM Rovigo" style="margin-top: 5px;">
                 </td>
                 <td style="width: 40%; vertical-align: top;">
                     <strong>Livello di Cura Indicato:</strong><br>
                     <select style="margin-top: 5px; font-weight: bold;">
                         <option>Trattamento Ambulatoriale Monoprofessionale</option>
                         <option>Trattamento Ambulatoriale Integrato (Equipe)</option>
-                        <option>Semi-residenziale (Centro Diurno DCA)</option>
+                        <option selected>Semi-residenziale (Centro Diurno DCA)</option>
                         <option>Residenziale Riabilitativo Extra-regione / Veneto</option>
                         <option>Ricovero Ospedaliero di Urgenza (Nutrizione Artificiale / Salvavita)</option>
                     </select>
