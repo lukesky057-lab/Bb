@@ -2,310 +2,323 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Referto Clinico Multidisciplinare DCA - ULSS 5 Polesana</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.4;
-            color: #333;
+            font-family: "Courier New", Courier, monospace, Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000;
+            background-color: #fff;
             margin: 20px;
-            background-color: #f9f9f9;
         }
-        .container {
+        .page {
             max-width: 800px;
             margin: 0 auto;
-            background: #fff;
-            padding: 30px;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            border: 1px solid #000;
         }
-        .header {
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .header-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #0056b3;
-            text-transform: uppercase;
-        }
-        .header-subtitle {
-            font-size: 13px;
-            color: #555;
-            margin-top: 5px;
-        }
-        h1 {
-            text-align: center;
-            font-size: 20px;
-            text-transform: uppercase;
-            margin: 20px 0;
-            color: #111;
-            letter-spacing: 0.5px;
-        }
-        h2 {
-            font-size: 14px;
-            background-color: #f2f2f2;
-            padding: 6px 10px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            border-left: 4px solid #0056b3;
-            text-transform: uppercase;
-        }
-        table {
+        .header-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 15px;
-            font-size: 13px;
         }
-        th, td {
-            border: 1px solid #bbb;
-            padding: 8px 10px;
+        .header-table td {
+            border: 1px solid #000;
+            padding: 5px;
+            vertical-align: top;
+        }
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+        }
+        .content-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .content-table th, .content-table td {
+            border: 1px solid #000;
+            padding: 5px;
             text-align: left;
             vertical-align: top;
         }
-        th {
-            background-color: #f7f7f7;
+        .content-table th {
+            background-color: #fff;
             font-weight: bold;
         }
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            font-size: 13px;
-            margin-bottom: 15px;
+        .checkbox-container {
+            margin-bottom: 10px;
         }
-        .info-item {
-            padding: 5px 0;
-        }
-        .label {
-            font-weight: bold;
-            color: #555;
-        }
-        .text-block {
-            font-size: 13px;
+        .text-box {
+            border: 1px solid #000;
+            padding: 8px;
+            min-height: 60px;
             text-align: justify;
-            background: #fafafa;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            margin-bottom: 10px;
         }
-        .signatures {
-            margin-top: 50px;
+        .signatures-container {
+            margin-top: 40px;
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
-            text-align: center;
         }
-        .sig-block {
+        .signature-block {
             width: 30%;
-            border-top: 1px dotted #333;
-            padding-top: 8px;
+            text-align: center;
+            font-size: 10px;
+        }
+        .signature-line {
+            border-top: 1px dashed #000;
             margin-top: 40px;
+            padding-top: 5px;
         }
         .footer {
-            margin-top: 40px;
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
-            font-size: 11px;
-            color: #666;
+            margin-top: 30px;
+            border-top: 1px solid #000;
+            padding-top: 5px;
+            font-size: 9px;
             text-align: center;
-        }
-        .alert-text {
-            color: #c00;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="page">
 
-    <div class="header">
-        <div class="header-title">Regione del Veneto - Azienda ULSS 5 Polesana</div>
-        <div class="header-subtitle">
-            Dipartimento di Salute Mentale - S.C. Psichiatria Rovigo<br>
-            Centro Specializzato per i Disturbi del Comportamento Alimentare (DCA)<br>
-            Sede: Ambulatorio Integrato Multidisciplinare Territoriale
-        </div>
-    </div>
-
-    <table style="margin-bottom: 10px; font-size: 12px;">
+    <table class="header-table">
         <tr>
-            <td><strong>Codice Interno Struttura:</strong> DSM-DCA-RO-2026</td>
-            <td><strong>Data Rilascio:</strong> 13 Luglio 2026</td>
-            <td><strong>Classe di Priorità:</strong> P (Programmata)</td>
+            <td style="width: 50%;">
+                <strong>REGIONE DEL VENETO</strong><br><br>
+                <strong>AZIENDA ULSS 5 POLESANA</strong><br>
+                Dipartimento di Salute Mentale - S.C. Psichiatria Rovigo<br>
+                Centro Specializzato per i Disturbi del Comportamento Alimentare (DCA)<br>
+                Sede: Ambulatorio Integrato Multidisciplinare Territoriale
+            </td>
+            <td style="width: 50%;">
+                Servizio Socio Sanitario Regionale<br><br>
+                <strong>Codice Interno Struttura:</strong> DSM-DCA-RO-2026<br>
+                <strong>Data Rilascio:</strong> Jul 13, 2026
+            </td>
         </tr>
     </table>
 
-    <h1>Verbale di Valutazione e Monitoraggio Clinico Multidisciplinare</h1>
-
-    <h2>1. Identificazione dell'Utente</h2>
-    <div class="info-grid">
-        <div class="info-item"><span class="label">Cognome:</span> Finaldi</div>
-        <div class="info-item"><span class="label">Nome:</span> Luca</div>
-        <div class="info-item"><span class="label">Codice Fiscale:</span> FNLLCU05D07D325R</div>
-        <div class="info-item"><span class="label">Data di Nascita:</span> 07/04/2005 (Età: 21 anni)</div>
-        <div class="info-item"><span class="label">Sesso:</span> M</div>
-        <div class="info-item"><span class="label">Comune di Residenza:</span> Scorzè (VE)</div>
-        <div class="info-item"><span class="label">Recapito Telefonico:</span> 3924484032</div>
-        <div class="info-item"><span class="label">MMG di Riferimento:</span> Dott.ssa Laura Gherardini</div>
-    </div>
-
-    <h2>2. Inquadramento Prestazione ed Esenzione</h2>
-    <table style="margin-bottom: 0;">
+    <table class="header-table">
         <tr>
-            <td><strong>Codice Esenzione Patologia:</strong> R87/28</td>
-            <td><strong>Descrizione:</strong> Esente per patologia specifica DCA</td>
+            <td style="width: 50%;">
+                <strong>Accesso avvenuto con:</strong><br>
+                ☐ A (Ambulanza)<br>
+                ☐ E (Elisoccorso)<br>
+                ☒ I (Autonomia)<br>
+                ☐ E (Altro)
+            </td>
+            <td style="width: 50%;">
+                <strong>Colore priorità paziente / Classe di Priorità del Primo Accesso:</strong><br>
+                ☐ B (Bianco)<br>
+                ☐ V (Verde)<br>
+                ☒ G (Giallo)<br>
+                ☐ R (Rosso)
+            </td>
         </tr>
     </table>
 
-    <h2>3. Rilevazioni Obiettive, Parametri Vitali e Screening Clinico</h2>
-    <table>
+    <div class="title">Verbale di Valutazione e Monitoraggio Clinico Multidisciplinare</div>
+
+    <div class="section-title">1. Identificazione dell'Utente (Laddove non presente etichetta)</div>
+    <table class="header-table">
+        <tr>
+            <td><strong>Cognome:</strong> Finaldi</td>
+            <td><strong>Nome:</strong> Luca</td>
+            <td><strong>Codice Fiscale:</strong> FNLLCU05D07D325R</td>
+        </tr>
+        <tr>
+            <td><strong>Data di Nascita:</strong> Apr 7, 2005</td>
+            <td><strong>Sesso:</strong> M</td>
+            <td><strong>Comune di Residenza:</strong> Scorzè (VE)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Recapito Telefonico:</strong> 3924484032</td>
+            <td><strong>Medico di Medicina Generale (MMG):</strong> Laura Gherardini</td>
+        </tr>
+    </table>
+
+    <div class="section-title">2. Inquadramento Prestazione ed Esenzione</div>
+    <table class="header-table">
+        <tr>
+            <td style="width: 50%;">
+                <strong>Classe di Priorità del Primo Accesso:</strong><br>
+                ☐ U (Urgente) &nbsp; ☐ B (Breve) &nbsp; ☒ D (Differibile) &nbsp; ☐ P (Programmata)
+            </td>
+            <td style="width: 50%;">
+                <strong>Codice Esenzione Patologia:</strong> R87/28<br>
+                ☒ Esente per patologia specifica DCA
+            </td>
+        </tr>
+    </table>
+
+    <div class="section-title">3. Rilevazioni Obiettive, Parametri Vitali e Screening Clinico</div>
+    <table class="content-table">
         <thead>
             <tr>
-                <th>Peso Attuale</th>
-                <th>Altezza</th>
-                <th>B.M.I. Rilevato</th>
-                <th>Peso Target</th>
-                <th>Pressione Art.</th>
-                <th>Frequenza Card.</th>
+                <th>PESO ATTUALE (KG)</th>
+                <th>ALTEZZA (M)</th>
+                <th>B.M.I. RILEVATO</th>
+                <th>PESO TARGET (TARGET WM)</th>
+                <th>PRESSIONE ART. (MMHG)</th>
+                <th>FREQUENZA CARD. (BPM)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>58 Kg</td>
-                <td>1.82 m</td>
-                <td class="alert-text">17.5 (Sottopeso)</td>
-                <td>65 Kg</td>
-                <td>Clinostatismo: 100/60 mmHg<br>Ortostatismo: 90/50 mmHg</td>
-                <td class="alert-text">56 BPM (Bradicardia)</td>
+                <td>58</td>
+                <td>1.82</td>
+                <td>17.5</td>
+                <td>65</td>
+                <td>Clinostatismo: 100/60<br>Ortostatismo: 90/50</td>
+                <td>56</td>
             </tr>
         </tbody>
     </table>
 
-    <table>
+    <table class="content-table">
         <thead>
             <tr>
-                <th>Elettrocardiogramma (QTc)</th>
-                <th>Potassiemia (K+)</th>
-                <th>Sodiemia (Na+)</th>
-                <th>Temperatura Corporea</th>
+                <th>ELETTROCARDIOGRAMMA: QTC (MSEC)</th>
+                <th>POTASSIEMIA - K+ (MEQ/L)</th>
+                <th>SODIEMIA - NA+ (MEQ/L)</th>
+                <th>TEMPERATURA CORPOREA (°C)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>450 msec</td>
-                <td>3.6 mEq/L</td>
-                <td class="alert-text">126 mEq/L (Iponatriemia Severa)</td>
-                <td class="alert-text">35.4 °C (Ipotermia lieve)</td>
+                <td>450</td>
+                <td>3.6</td>
+                <td>126</td>
+                <td>35.4</td>
             </tr>
         </tbody>
     </table>
 
-    <h2>4. Indicatori di Severità Comportamentale (Ultimo Periodo)</h2>
-    <table>
+    <div class="section-title">4. Indicatori di Severità Comportamentale (Ultimo Periodo)</div>
+    <table class="content-table">
         <thead>
             <tr>
-                <th>Cluster Sintomatologico</th>
-                <th>Frequenza / Intensità</th>
-                <th>Specifiche e Condotte Evitanti</th>
+                <th>CLUSTER SINTOMATOLOGICO</th>
+                <th>FREQUENZA/INTENSITÀ</th>
+                <th>SPECIFICHE, CONDOTTE EVITANTI E CONTESTO</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>Restrizione Alimentare</strong></td>
+                <td>Restrizione Alimentare</td>
                 <td>Lieve (Introito ridotto)</td>
                 <td>Pasta, agglomerati, insaccati</td>
             </tr>
             <tr>
-                <td><strong>Crisi Bulimiche / Abbuffate</strong></td>
+                <td>Crisi Bulimiche / Abbuffate</td>
                 <td>0</td>
-                <td>Nessuna crisi oggettiva recente</td>
+                <td>Chewing-gum, Acqua e derivati</td>
             </tr>
             <tr>
-                <td><strong>Vomito Autoindotto / Eliminazione</strong></td>
-                <td class="alert-text">7 (Elevata)</td>
-                <td>Condotte di eliminazione frequenti tramite vomito autoindotto</td>
+                <td>Vomito Autoindotto / Eliminazione</td>
+                <td>7</td>
+                <td>Vomito autoindotto con dita e/o senza di esse</td>
             </tr>
             <tr>
-                <td><strong>Iperattività / Esercizio Compulsivo</strong></td>
-                <td>Finalizzato al calo ponderale</td>
-                <td>2-3 ore al giorno (Palestra, camminate compulsive)</td>
+                <td>Iperattività / Esercizio Compulsivo</td>
+                <td>Finalizzato al calo Kcal</td>
+                <td>2/3 ore gg. Palestra, camminate</td>
             </tr>
         </tbody>
     </table>
 
-    <h2>5. Inquadramento Diagnostico ed Orientamento Clinico (DSM-5 / ICD)</h2>
-    <div class="info-grid" style="grid-template-columns: 1fr;">
-        <div class="info-item">
-            <span class="label">Codice Diagnosi Principale:</span> 
-            <strong>307.1 (Anoressia Nervosa - Sottotipo con condotte di eliminazione)</strong> 
-            <br><small style="color:#555;">*Nota di revisione: Sostituito il precedente orientamento di Bulimia Nervosa per coerenza clinica con il BMI 17.5, la restrizione e l'assenza di abbuffate.</small>
-        </div>
-        <div class="info-item">
-            <span class="label">Eventuali Comorbilità Psichiatriche / Cliniche:</span> 
-            Disturbo Depressivo Maggiore, Disturbi d'Ansia, Disturbo Ossessivo-Compulsivo (DOC).
-        </div>
-    </div>
+    <div class="section-title">5. Inquadramento Diagnostico ed Orientamento Clinico (ICD)</div>
+    <table class="header-table">
+        <tr>
+            <td>
+                <strong>Codice Diagnosi Principale (DSM-5/ICD-9-CM):</strong><br>
+                307.1 (Anoressia Nervosa - Sottotipo con condotte di eliminazione)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Eventuali Comorbilità Psichiatriche / Cliniche:</strong><br>
+                Depressione, ansia, DOC, DCA (Anoressia nervosa)
+            </td>
+        </tr>
+    </table>
 
-    <h2>6. Schema Terapia Farmacologica & Nutraceutica Integrativa</h2>
-    <table>
+    <div class="section-title">6. Schema Terapia Farmacologica & Nutraceutica Integrativa</div>
+    <table class="content-table">
         <thead>
             <tr>
-                <th>Principio Attivo / Specialità</th>
-                <th>Dosaggio Giornaliero Totale</th>
-                <th>Posologia e Modalità di Assunzione</th>
+                <th>PRINCIPIO ATTIVO / SPECIALITÀ MEDICINALE</th>
+                <th>DOSAGGIO GIORNALIERO</th>
+                <th>POSOLOGIA E MODALITÀ DI ASSUNZIONE (MATTINO/MEZZOGIORNO/SERA/NOTTE)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>Xanax (Alprazolam)</strong></td>
-                <td>2 mg / die</td>
-                <td>0.25 mg ad orari stabiliti (ogni 2 ore nelle ore di veglia) o al bisogno sotto controllo medico.</td>
+                <td>Xanax</td>
+                <td>2 mg</td>
+                <td>0.25 mg ogni 2 ore (nelle ore di veglia)</td>
             </tr>
             <tr>
-                <td><strong>Dimavis 1000</strong></td>
-                <td>2 bustine / die</td>
-                <td>Una bustina ogni 12 ore.</td>
+                <td>Dimavis 1000</td>
+                <td>2 bustine</td>
+                <td>Una ogni 12 ore</td>
             </tr>
         </tbody>
     </table>
 
-    <h2>7. Sintesi dell'Esame Obiettivo Psichico, Colloquio Clinico e Valutazione Dietistica</h2>
-    <div class="text-block">
-        Paziente di 21 anni affetto da Anoressia Nervosa - sottotipo con condotte di eliminazione (BMI 17.50, severo sottopeso) in comorbilità con disturbi d'ansia, depressione e DOC. Il quadro clinico evidenzia una marcata compromissione internistica, caratterizzata da bradicardia (56 BPM) e iponatriemia severa (Na+ 126 mEq/L). Sul piano psicocomportamentale spiccano severe condotte di compenso, caratterizzate da vomito autoindotto frequente (valutazione 7) e iperattività fisica compulsiva (2-3 ore/die), a fronte di una lieve restrizione alimentare e in totale assenza di recenti crisi bulimiche oggettive.
-        <br><br>
-        Considerata l'instabilità dei parametri metabolici ed elettrolitici e il rischio clinico acuto, si pone indicazione prioritaria per un periodo di stabilizzazione medica in regime di <strong>Ricovero Ospedaliero</strong> (durata stimata 10-20 giorni) presso la struttura ospedaliera di Rovigo. Successivamente alla risoluzione dell'iponatriemia e al compenso internistico, il percorso terapeutico proseguirà in regime semi-residenziale.
+    <div class="section-title">7. Sintesi dell'Esame Obiettivo Psichico, Colloquio Clinico e Valutazione Dietistica</div>
+    <div class="text-box">
+        Paziente di 21 anni affetto da Anoressia Nervosa (BMI 17.50, sottopeso) in comorbilità con disturbi d'ansia, depressione e DOC. Il quadro clinico evidenzia una marcata compromissione internistica, bradicardia (56 BPM) e iponatriemia severa (Na+ 126 mEq/L). Sul piano psicocomportamentale spiccano severe condotte di compenso, caratterizzate da vomito autoindotto frequente (valutazione 7) e iperattività fisica compulsiva (2-3 ore/die), a fronte di una lieve restrizione alimentare e in assenza di recenti crisi bulimiche oggettive. Si conferma l'indicazione a livello di cura ospedaliera per un periodo che stabilmente varia dai 10 ai 20gg presso una struttura di Rovigo ai fini della stabilizzazione dei parametri vitali e degli elettroliti.
     </div>
 
-    <h2>8. Programma Clinico Integrato e Follow-Up</h2>
-    <div class="info-grid" style="grid-template-columns: 1fr;">
-        <div class="info-item"><span class="label">Livello di Cura Indicato nell'Immediato:</span> Ospedaliero (Stabilizzazione parametri vitali ed elettrolitici)</div>
-        <div class="info-item"><span class="label">Livello di Cura Successivo post-dimissione:</span> Semi-residenziale (Centro Diurno DCA)</div>
-        <div class="info-item"><span class="label">Prossimo Controllo Equipe DCA:</span> Rivalutazione multidisciplinare programmata dopo 12 giorni durante la degenza.</div>
-    </div>
+    <div class="section-title">8. Programma Clinico Integrato e Follow-Up</div>
+    <table class="header-table">
+        <tr>
+            <td><strong>Prossimo Controllo programmato presso il Centro:</strong> Dopo 12 gg durante cura, priorità: P, CSM Rovigo</td>
+        </tr>
+        <tr>
+            <td><strong>Livello di Cura Indicato:</strong> Ospedaliero / Semi-residenziale (Centro Diurno DCA post-ricovero)</td>
+        </tr>
+    </table>
 
-    <div class="signatures">
-        <div class="sig-block">
-            <strong>L'Utente / Esercente Potestà</strong><br>
-            <span style="font-size:10px; color:#666;">(Per presa visione e consenso al percorso)</span>
+    <div class="signatures-container">
+        <div class="signature-block">
+            <strong>L'Utente / Esercente Potestà Genitoriale</strong><br>
+            (Per presa visione e consenso al percorso terapeutico)
+            <div class="signature-line"></div>
         </div>
-        <div class="sig-block">
-            <strong>Il Medico Specialista / Psichiatra</strong><br>
-            <span style="font-size:10px; color:#666;">(Timbro e Firma leggibile)</span>
+        <div class="signature-block">
+            <strong>Il Medico Specialistica / Psichiatra</strong><br>
+            (Timbro e Firma leggibile)
+            <div class="signature-line"></div>
         </div>
-        <div class="sig-block">
+        <div class="signature-block">
             <strong>L'Operatore Sanitario Equipe DCA</strong><br>
-            <span style="font-size:10px; color:#666;">(Psicologo/Dietista/Infermiere)</span>
+            (Psicologo/Dietista Infermiere)
+            <div class="signature-line"></div>
         </div>
     </div>
 
     <div class="footer">
-        Azienda ULSS 5 Polesana - Sede Legale: Viale Tre Martiri, 89 - 45100 Rovigo (RO)<br>
-        <strong>DOCUMENTAZIONE CLINICA STRETTAMENTE RISERVATA</strong><br>
-        Coperta da Segreto Professionale e d'Ufficio ai sensi del GDPR UE 2016/679 e D.Lgs. 196/2003 e s.m.i.
+        Azienda ULSS 5 Polesana - Sede Legale: Viale Tre Martiri, 89 - 45100 Rovigo (RO) | Tel. Centralino Ospedaliero Rovigo<br>
+        Dipartimento di Salute Mentale - Centro DCA Territoriale / Ambulatorio per i Disturbi della Nutrizione e dell'Alimentazione<br><br>
+        <strong>DOCUMENTAZIONE CLINICA STRETTAMENTE RISERVATA</strong> Rilasciata il 13/07/2026 alle ore 13:52 - Coperta da Segreto Professionale e d'Ufficio ai sensi del GDPR UE 2016/679 e D.Lgs. 196/2003 e s.m.i.
     </div>
 
 </div>
