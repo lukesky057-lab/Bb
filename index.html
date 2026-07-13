@@ -352,4 +352,188 @@
                         <input type="text" class="center-input" placeholder="Clinostatismo (es.110/70)" style="font-size: 8pt; border-bottom: 1px dotted #ccc; margin-bottom: 2px;">
                         <input type="text" class="center-input" placeholder="Ortostatismo (es.95/60)" style="font-size: 8pt;">
                     </td>
-                    <td><input type="number" class="center-input" placeholder="R
+                    <td><input type="number" class="center-input" placeholder="Rilevata"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="form-table" style="margin-top: 4px;">
+            <thead>
+                <tr>
+                    <th style="width: 25%; text-align: center;">Elettrocardiogramma: QTc (msec)</th>
+                    <th style="width: 25%; text-align: center;">Potassiemia - K+ (mEq/L)</th>
+                    <th style="width: 25%; text-align: center;">Sodiemia - Na+ (mEq/L)</th>
+                    <th style="width: 25%; text-align: center;">Temperatura Corporea (°C)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="center-input" placeholder="Valore QTc"></td>
+                    <td><input type="text" class="center-input" placeholder="Valore K+"></td>
+                    <td><input type="text" class="center-input" placeholder="Valore Na+"></td>
+                    <td><input type="number" step="0.1" class="center-input" placeholder="00.0"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">4. Indicatori di Severità Comportamentale (Ultimo Periodo)</div>
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th style="width: 35%;">Cluster Sintomatologico</th>
+                    <th style="width: 25%; text-align: center;">Frequenza / Intensità</th>
+                    <th style="width: 40%;">Specifiche, Condotte Evitanti e Contesto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Restrizione Alimentare</strong></td>
+                    <td>
+                        <select class="center-input">
+                            <option value="">-- Seleziona --</option>
+                            <option>Assente</option>
+                            <option>Lieve (Introito ridotto)</option>
+                            <option>Moderata (Salti pasto)</option>
+                            <option>Grave / Estrema</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Note specifiche sugli alimenti evitati..."></td>
+                </tr>
+                <tr>
+                    <td><strong>Crisi Bulimiche / Abbuffate</strong></td>
+                    <td><input type="text" class="center-input" placeholder="N° episodi a settimana"></td>
+                    <td><input type="text" placeholder="Presenza di alimentazione oggettiva o soggettiva..."></td>
+                </tr>
+                <tr>
+                    <td><strong>Vomito Autoindotto / Eliminazione</strong></td>
+                    <td><input type="text" class="center-input" placeholder="N° condotte / Die"></td>
+                    <td><input type="text" placeholder="Uso concomitante di diuretici/lassativi..."></td>
+                </tr>
+                <tr>
+                    <td><strong>Iperattività / Esercizio Compulsivo</strong></td>
+                    <td>
+                        <select class="center-input">
+                            <option value="">-- Seleziona --</option>
+                            <option>Non presente</option>
+                            <option>Finalizzato al compenso calorico</option>
+                            <option>Rigido / Coatto (Urgenza interna)</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Ore/giorno o tipologia di attività..."></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">5. Inquadramento Diagnostico ed Orientamento Clinico (ICD)</div>
+        <table class="form-table">
+            <tr>
+                <td style="width: 50%; vertical-align: top;">
+                    <strong>Codice Diagnosi Principale (DSM-5 / ICD-9-CM):</strong>
+                    <input type="text" style="border-bottom: 1px solid #000000; margin-top: 5px; font-weight: bold;" placeholder="es. 307.1 Anoressia Nervosa / 307.51 Bulimia">
+                </td>
+                <td style="width: 50%; vertical-align: top;">
+                    <strong>Eventuali Comorbilità Psichiatriche / Cliniche:</strong>
+                    <input type="text" style="border-bottom: 1px solid #000000; margin-top: 5px;" placeholder="es. Disturbi d'Asse II, Asse I (Depressione, DOC), Celiachia">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">6. Schema Terapia Farmacologica & Nutraceutica Integrativa</div>
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th style="width: 45%;">Principio Attivo / Specialità Medicinale</th>
+                    <th style="width: 20%; text-align: center;">Dosaggio Giornaliero</th>
+                    <th style="width: 35%;">Posologia e Modalità di Assunzione (Mattino/Mezzogiorno/Sera/Notte)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="1. .............................................................................."></td>
+                    <td><input type="text" class="center-input" placeholder="es. 20 mg"></td>
+                    <td><input type="text" placeholder="1 cp ore 08:00"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="2. .............................................................................."></td>
+                    <td><input type="text" class="center-input" placeholder=".................."></td>
+                    <td><input type="text" placeholder=".................................................................."></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="3. .............................................................................."></td>
+                    <td><input type="text" class="center-input" placeholder=".................."></td>
+                    <td><input type="text" placeholder=".................................................................."></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Integratori / Soluzioni Elettrolitiche (es. Potassio)"></td>
+                    <td><input type="text" class="center-input" placeholder=".................."></td>
+                    <td><input type="text" placeholder="Al bisogno / Schema fisso"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">7. Sintesi dell'Esame Obiettivo Psichico, Colloquio Clinico e Valutazione Dietistica</div>
+        <div class="notes-container">
+            <textarea rows="9" placeholder="Inserire qui la dettagliata descrizione clinica dell'andamento (Valutazione psicologica del vissuto corporeo, motivazione al cambiamento, compliance al piano nutrizionale, elementi di criticità emersi durante l'equipe medica multidisciplinare...)"></textarea>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">8. Programma Clinico Integrato e Follow-Up</div>
+        <table class="form-table">
+            <tr>
+                <td style="width: 60%;">
+                    <strong>Prossimo Controllo programmato presso il Centro:</strong><br>
+                    <input type="text" placeholder="Specificare data, ora e tipologia di operatore (Psichiatra, Psicologo, Dietista)..." style="margin-top: 5px;">
+                </td>
+                <td style="width: 40%; vertical-align: top;">
+                    <strong>Livello di Cura Indicato:</strong><br>
+                    <select style="margin-top: 5px; font-weight: bold;">
+                        <option>Trattamento Ambulatoriale Monoprofessionale</option>
+                        <option>Trattamento Ambulatoriale Integrato (Equipe)</option>
+                        <option>Semi-residenziale (Centro Diurno DCA)</option>
+                        <option>Residenziale Riabilitativo Extra-regione / Veneto</option>
+                        <option>Ricovero Ospedaliero di Urgenza (Nutrizione Artificiale / Salvavita)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <table class="signature-table">
+        <tr>
+            <td>
+                <strong>L'Utente / Esercente Potestà Genitoriale</strong><br>
+                <span style="font-size: 7.5pt; color: #555555;">(Per presa visione e consenso al percorso terapeutico)</span>
+                <div class="sig-line"></div>
+            </td>
+            <td>
+                <strong>Il Medico Specialista / Psichiatra</strong><br>
+                <span style="font-size: 7.5pt; color: #555555;">(Timbro e Firma leggibile)</span>
+                <div class="sig-line"></div>
+            </td>
+            <td>
+                <strong>L'Operatore Sanitario Equipe DCA</strong><br>
+                <span style="font-size: 7.5pt; color: #555555;">(Psicologo / Dietista / Infermiere)</span>
+                <div class="sig-line"></div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="footer-info">
+        Azienda ULSS 5 Polesana - Sede Legale: Viale Tre Martiri, 89 - 45100 Rovigo (RO) | Tel. Centralino Ospedaliero Rovigo<br>
+        Dipartimento di Salute Mentale - Centro DCA Territoriale / Ambulatorio per i Disturbi della Nutrizione e dell'Alimentazione<br>
+        <strong>DOCUMENTAZIONE CLINICA STRETTAMENTE RISERVATA</strong> - Coperta da Segreto Professione ed d'Ufficio ai sensi del GDPR UE 2016/679 e D.Lgs. 196/2003 e s.m.i.
+    </div>
+
+</div>
+
+</body>
+</html>
