@@ -148,7 +148,7 @@
         input:focus, textarea:focus, select:focus {
             outline: none;
             background-color: #f5f8ff;
-        }
+            }
 
         textarea {
             resize: vertical;
@@ -295,13 +295,13 @@
                     <strong>Accesso avvenuto con:</strong><br>
                     <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="A"><strong>A</strong> (Ambulanza)</label>
                     <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="E"><strong>E</strong> (Elisoccorso)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="I"><strong>I</strong> (Autonomia)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="I" checked><strong>I</strong> (Autonomia)</label>
                     <label class="checkbox-label"><input type="checkbox" name="accesso_mezzo" value="Altro"><strong>X</strong> (Altro)</label>
                 </td>
                 <td style="width: 50%; vertical-align: top;">
                     <strong>Colore priorità paziente / Classe di Priorità del Primo Accesso:</strong><br>
                     <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="B"><strong>B</strong> (Bianco)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="V"><strong>V</strong> (Verde)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="V" checked><strong>V</strong> (Verde)</label>
                     <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="G"><strong>G</strong> (Giallo)</label>
                     <label class="checkbox-label"><input type="checkbox" name="priorita_colore" value="R"><strong>R</strong> (Rosso)</label>
                 </td>
@@ -346,7 +346,7 @@
                 <td style="width: 50%;">
                     <strong>Classe di Priorità del Primo Accesso:</strong><br>
                     <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="U"><strong>U</strong> (Urgente)</label>
-                    <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="B"><strong>B</strong> (Breve)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="B" checked><strong>B</strong> (Breve)</label>
                     <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="D"><strong>D</strong> (Differibile)</label>
                     <label class="checkbox-label"><input type="checkbox" name="classe_priorita" value="P"><strong>P</strong> (Programmata)</label>
                 </td>
@@ -374,15 +374,15 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="number" step="0.1" name="peso" class="center-input" value="58"></td>
+                    <td><input type="number" step="0.1" name="peso" class="center-input" value="66"></td>
                     <td><input type="number" step="0.01" name="altezza" class="center-input" value="1.82"></td>
-                    <td><input type="number" step="0.1" name="bmi" class="center-input" value="17.5" style="font-weight: bold;"></td>
-                    <td><input type="number" step="0.1" name="peso_target" class="center-input" value="65"></td>
+                    <td><input type="number" step="0.1" name="bmi" class="center-input" value="19.9" style="font-weight: bold;"></td>
+                    <td><input type="number" step="0.1" name="peso_target" class="center-input" value="66"></td>
                     <td>
-                        <input type="text" name="pa_clino" class="center-input" value="Clinostatismo: 100/60" style="font-size: 8pt; border-bottom: 1px dotted #ccc; margin-bottom: 2px;">
-                        <input type="text" name="pa_orto" class="center-input" value="Ortostatismo: 90/50" style="font-size: 8pt;">
+                        <input type="text" name="pa_clino" class="center-input" value="Clinostatismo: 110/70" style="font-size: 8pt; border-bottom: 1px dotted #ccc; margin-bottom: 2px;">
+                        <input type="text" name="pa_orto" class="center-input" value="Ortostatismo: 105/65" style="font-size: 8pt;">
                     </td>
-                    <td><input type="number" name="fc" class="center-input" value="56"></td>
+                    <td><input type="number" name="fc" class="center-input" value="68"></td>
                 </tr>
             </tbody>
         </table>
@@ -398,10 +398,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" name="qtc" class="center-input" value="450"></td>
-                    <td><input type="text" name="potassiemia" class="center-input" value="3.6"></td>
-                    <td><input type="text" name="sodiemia" class="center-input" value="126"></td>
-                    <td><input type="number" step="0.1" name="temperatura" class="center-input" value="35.4"></td>
+                    <td><input type="text" name="qtc" class="center-input" value="410"></td>
+                    <td><input type="text" name="potassiemia" class="center-input" value="3.1"></td>
+                    <td><input type="text" name="sodiemia" class="center-input" value="136"></td>
+                    <td><input type="number" step="0.1" name="temperatura" class="center-input" value="36.2"></td>
                 </tr>
             </tbody>
         </table>
@@ -423,35 +423,35 @@
                     <td>
                         <select name="restrizione_livello" class="center-input">
                             <option value="">-- Seleziona --</option>
-                            <option>Assente</option>
-                            <option selected>Lieve (Introito ridotto)</option>
+                            <option selected>Assente</option>
+                            <option>Lieve (Introito ridotto)</option>
                             <option>Moderata (Salti pasto)</option>
                             <option>Grave / Estrema</option>
                         </select>
                     </td>
-                    <td><input type="text" name="restrizione_specifiche" value="Pasta, agglomerati, insaccati"></td>
+                    <td><input type="text" name="restrizione_specifiche" value="Tentativi intermittenti seguiti da perdita di controllo"></td>
                 </tr>
                 <tr>
                     <td><strong>Crisi Bulimiche / Abbuffate</strong></td>
-                    <td><input type="text" name="abbuffate_freq" class="center-input" value="3"></td>
-                    <td><input type="text" name="abbuffate_specifiche" value="Riso, Chewing-gum, Acqua e derivati"></td>
+                    <td><input type="text" name="abbuffate_freq" class="center-input" value="4-5 a settimana"></td>
+                    <td><input type="text" name="abbuffate_specifiche" value="Grandi quantità di carboidrati e cibi ipercalorici"></td>
                 </tr>
                 <tr>
                     <td><strong>Vomito Autoindotto / Eliminazione</strong></td>
-                    <td><input type="text" name="vomito_freq" class="center-input" value="5"></td>
-                    <td><input type="text" name="vomito_specifiche" value="Vomito autoindotto digitale"></td>
+                    <td><input type="text" name="vomito_freq" class="center-input" value="Ogni dopo crisi"></td>
+                    <td><input type="text" name="vomito_specifiche" value="Vomito autoindotto riflesso/digitale sistematico"></td>
                 </tr>
                 <tr>
                     <td><strong>Iperattività / Esercizio Compulsivo</strong></td>
                     <td>
                         <select name="iperattivita_livello" class="center-input">
                             <option value="">-- Seleziona --</option>
-                            <option>Non presente</option>
+                            <option value="Non presente">Non presente</option>
                             <option selected>Finalizzato al calo Kcal</option>
                             <option>Rigido / Coatto (Urgenza interna)</option>
                         </select>
                     </td>
-                    <td><input type="text" name="iperattivita_specifiche" value="2/3 ore gg. Palestra, camminate"></td>
+                    <td><input type="text" name="iperattivita_specifiche" value="Attività compensatoria saltuaria post-episodio"></td>
                 </tr>
             </tbody>
         </table>
@@ -463,11 +463,11 @@
             <tr>
                 <td style="width: 50%; vertical-align: top;">
                     <strong>Codice Diagnosi Principale (DSM-5 / ICD-10):</strong>
-                    <input type="text" name="diagnosi_princ" style="border-bottom: 1px solid #000000; margin-top: 5px; font-weight: bold;" value="307.1 (Anoressia Nervosa, Sottotipo con Abbuffate/Condotte di Eliminazione)">
+                    <input type="text" name="diagnosi_princ" style="border-bottom: 1px solid #000000; margin-top: 5px; font-weight: bold;" value="307.51 (Bulimia Nervosa, con condotte di eliminazione sistematiche)">
                 </td>
                 <td style="width: 50%; vertical-align: top;">
                     <strong>Eventuali Comorbilità Psichiatriche / Cliniche:</strong>
-                    <input type="text" name="comorbilita" style="border-bottom: 1px solid #000000; margin-top: 5px;" value="Depressione, ansia, DOC">
+                    <input type="text" name="comorbilita" style="border-bottom: 1px solid #000000; margin-top: 5px;" value="Disturbo d'Ansia Generalizzata, Episodio Depressivo Lieve, Tratti di DOC">
                 </td>
             </tr>
         </table>
@@ -490,9 +490,9 @@
                     <td><input type="text" name="posologia_1" value="0.25 mg tre volte al giorno (Mattino, Mezzogiorno, Sera)"></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="farmaco_2" value="Sartralina"></td>
-                    <td><input type="text" name="dosaggio_2" class="center-input" value="2 bustine"></td>
-                    <td><input type="text" name="posologia_2" value="25-50 mg al giorno"></td>
+                    <td><input type="text" name="farmaco_2" value="Sertralina (Zoloft)"></td>
+                    <td><input type="text" name="dosaggio_2" class="center-input" value="100 mg"></td>
+                    <td><input type="text" name="posologia_2" value="1 compressa al mattino dopo colazione"></td>
                 </tr>
             </tbody>
         </table>
@@ -501,7 +501,7 @@
     <div class="section">
         <div class="section-title">7. Sintesi dell'Esame Obiettivo Psichico, Colloquio Clinico e Valutazione Dietistica</div>
         <div class="notes-container">
-            <textarea name="sintesi_clinica" rows="9">Paziente di 21 anni affetto da disturbo della nutrizione e dell'alimentazione ad impronta restrittiva con condotte di eliminazione (BMI 17.50, sottopeso) in comorbilità con disturbi d'ansia, depressione e DOC. Il quadro clinico evidenzia una marcata compromissione internistica, bradicardia (56 BPM) e iponatriemia severa (Na+ 126 mEq/L). Sul piano psicocomportamentale spiccano severe condotte di compenso, caratterizzate da vomito autoindotto frequente (valutazione 7) e iperattività fisica compulsiva (2-3 ore/die), a fronte di una lieve restrizione alimentare e in assenza di recenti crisi bulimiche oggettive. Si conferma l'indicazione a livello di cura presso la propria residenza con monitoraggio multidisciplinare a breve termine. In caso di indisponibilità della stessa (dichiarata dal paziente), si opterà per un periodo di ricovero (variabile dai 10 ai 20 gg) presso una struttura ospedaliera di Rovigo o idonea.</textarea>
+            <textarea name="sintesi_clinica" rows="9">Paziente di 21 anni che presenta un quadro clinico pienamente compatibile con una diagnosi di Bulimia Nervosa (DSM-5 307.51). Al colloquio si evidenziano ricorrenti episodi di abbuffate oggettive (frequenza stimata di 4-5 eventi a settimana) caratterizzate da perdita del controllo sul comportamento alimentare, seguiti da condotte di compenso inappropriate di tipo evacuativo (vomito autoindotto sistematico). Attualmente il paziente mantiene un range ponderale di normopeso (BMI 19.9), coerente con l'inquadramento nosografico. Sul piano bioumorale si riscontra una severa ipopotassiemia (K+ 3.1 mEq/L) secondaria al vomito ripetuto, che richiede monitoraggio elettrolitico stretto ed ecg periodico per prevenire complicanze aritmiche. In comorbilità si rilevano flessione del tono dell'umore ed elevati livelli di ansia anticipatoria legata alla perdita di controllo. Si indica prosecuzione del trattamento in regime semi-residenziale integrato.</textarea>
         </div>
     </div>
 
@@ -511,7 +511,7 @@
             <tr>
                 <td style="width: 60%;">
                     <strong>Prossimo Controllo programmato presso il Centro:</strong><br>
-                    <input type="text" name="prossimo_controllo" value="Dopo 12 gg, priorità: P, presso CSM Rovigo" style="margin-top: 5px;">
+                    <input type="text" name="prossimo_controllo" value="Dopo 7 gg per controllo elettrolitico, priorità: B, presso Ambulatorio DCA" style="margin-top: 5px;">
                 </td>
                 <td style="width: 40%; vertical-align: top;">
                     <strong>Livello di Cura Indicato:</strong><br>
